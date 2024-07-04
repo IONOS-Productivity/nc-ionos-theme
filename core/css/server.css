@@ -37,7 +37,7 @@
 	--white: rgba(255, 255, 255, 1);
 
 
-	--color-main-background: var(--white) !important;
+	--color-main-background: light-dark(var(--white), var(--dark-grey)) !important;
 	--color-main-text: var(--ionos-blue-dark) !important;
 	--color-main-background-blur: var(--light-grey) !important;
 

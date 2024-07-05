@@ -16,3 +16,10 @@ The process is simple:
 The folder structure of a theme is exactly the same as the main structure. CSS files are loaded additionally to the default files so you can override properties. Images are replaced. You can also override JS files and PHP templates but we do not recommend that because you will need to adjust them after every update.
 
 You can also find a basic example here which you can build upon.
+
+
+## Benefits:
+- Enforcing Theme works fine
+- Dark-Light Mode & High Contrast Modes can be implemented in our CSS
+- dyslexia mode stills works fine (except too large font size)
+- eg og header could be removed by display none

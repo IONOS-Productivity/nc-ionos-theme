@@ -16,27 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
+@import url('ionos-variables.css');
+@import url('apps/files/sidemenu.css');
 
 /* IONOS EXAMPLE */
 :root {
-	/* BRAND COLORS */
-
-	--ionos-blue: rgba(0, 61, 143, 1);
-	--ionos-blue-400: rgba(20, 116, 196, 1);
-	--blue-mild: rgba(46, 67, 96, 1);
-	--b7-dark-blue: rgba(11, 42, 99, 1);
-	--ionos-blue-dark: rgba(0, 27, 65, 1);
-	--dark-blue: rgba(10, 18, 28, 1);
-	--ionos-cool-grey-c4: rgba(151, 163, 180, 1);	
-	--cool-grey-200: rgba(219, 226, 232, 1);
-	--cool-grey-500: rgba(113, 128, 149, 1);
-	--light-grey: rgba(236, 236, 236, 1);
-	--neutral-grey: rgba(87, 87, 87, 1);
-	--dark-grey: rgba(68, 68, 68, 1);
-
-	--white: rgba(255, 255, 255, 1);
-
-
 	--color-main-background: light-dark(var(--white), var(--dark-grey)) !important;
 	--color-main-text: var(--ionos-blue-dark) !important;
 	--color-main-background-blur: var(--light-grey) !important;

@@ -41,7 +41,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getTitle(): string {
-		return 'Custom Cloud';
+		return 'IONOS EasyStorage';
 	}
 
 	/**
@@ -49,7 +49,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getName(): string {
-		return 'Custom Cloud';
+		return 'IONOS EasyStorage';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getHTMLName(): string {
-		return 'Custom Cloud';
+		return 'IONOS EasyStorage';
 	}
 
 	/**
@@ -65,7 +65,7 @@ class OC_Theme {
 	 * @return string entity name
 	 */
 	public function getEntity(): string {
-		return 'Custom Cloud Co.';
+		return 'IONOS SE';
 	}
 
 	/**
@@ -120,7 +120,7 @@ class OC_Theme {
 	 * @return string
 	 */
 	public function getColorPrimary(): string {
-		return '#745bca';
+		return 'rgba(0, 61, 143, 1)';
 	}
 
 	/**
@@ -129,7 +129,7 @@ class OC_Theme {
 	 */
 	public function getScssVariables(): array {
 		return [
-			'color-primary' => '#745bca'
+			'color-primary' => 'rgba(0, 61, 143, 1)'
 		];
 	}
 }

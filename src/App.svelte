@@ -21,7 +21,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	import Icon from './components/Icon.svelte';
 
 	export let home_src = '#';
-	export let settings_src = '#';
 </script>
 
 <div class="ios-global-nav">
@@ -31,7 +30,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	</a>
 
 	<div class="header-right">
-		<a href={settings_src}>Settings</a>
+		<slot />
 	</div>
 </div>
 
@@ -62,5 +61,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		display: flex;
 		align-items: center;
 		margin-left: auto;
+	}
+
+	@media (max-width: 768px) {
+		.ios-global-nav {
+			padding: 0 16px;
+		}
+
+		.header-left {
+			gap: 12px;
+		}
 	}
 </style>

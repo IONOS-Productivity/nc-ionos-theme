@@ -1,3 +1,21 @@
+<!--
+SPDX-FileLicenseText: 2024 Kai Henseler <kai.henseler@strato.de>
+SPDX-License-Identifier: AGPL-3.0-or-later
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <?php
 /**
  * @var \OC_Defaults $theme
@@ -56,24 +74,6 @@ p($theme->getTitle());
 			<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 		</div>
 
-		<header id="header">
-			<div class="header-left">
-				<a href="<?php print_unescaped($_['logoUrl'] ?: link_to('', 'index.php')); ?>"
-					aria-label="<?php p($l->t('Go to %s', [$_['logoUrl'] ?: $_['defaultAppName']])); ?>"
-					id="nextcloud">
-					<div class="logo logo-icon"></div>
-				</a>
-
-				<nav id="header-left__appmenu"></nav>
-			</div>
-
-			<div class="header-right">
-				<div id="unified-search"></div>
-				<div id="notifications"></div>
-				<div id="contactsmenu"></div>
-				<div id="user-menu"></div>
-			</div>
-		</header>
 
 		<main id="content" class="app-<?php p($_['appid']) ?>">
 			<h1 class="hidden-visually" id="page-heading-level-1">

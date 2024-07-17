@@ -56,6 +56,8 @@ p($theme->getTitle());
 		<link rel="apple-touch-icon-precomposed" href="<?php print_unescaped(image_path($_['appid'], 'favicon-touch.png')); ?>">
 		<link rel="mask-icon" sizes="any" href="<?php print_unescaped(image_path($_['appid'], 'favicon-mask.svg')); ?>" color="<?php p($theme->getColorPrimary()); ?>">
 		<link rel="manifest" href="<?php print_unescaped(image_path($_['appid'], 'manifest.json')); ?>" crossorigin="use-credentials">
+		<script nonce="<?php p(\OC::$server->getContentSecurityPolicyNonceManager()->getNonce()) ?>" src="/themes/nc-ionos-theme/core/js/custom-elements/global-navigation/ionos-global-navigation.js" type="module"></script>
+		
 		<?php emit_css_loading_tags($_); ?>
 		<?php emit_script_loading_tags($_); ?>
 		<?php print_unescaped($_['headers']); ?>
@@ -74,6 +76,13 @@ p($theme->getTitle());
 			<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 		</div>
 
+		<header id="ionos-global-nav">
+			<ionos-global-nav
+			home_src="/index.php">
+				<a href="<?php p(\OC_User::getLogoutUrl(\OC::$server->getURLGenerator()))?>" style="color: var(--color-primary);">Logout</a>
+				<a href="/index.php/settings/user" style="color: var(--color-primary);">Settings</a>
+			</ionos-global-nav>
+		</header>
 
 		<main id="content" class="app-<?php p($_['appid']) ?>">
 			<h1 class="hidden-visually" id="page-heading-level-1">

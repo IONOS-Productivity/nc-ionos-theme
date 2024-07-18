@@ -56,7 +56,7 @@ p($theme->getTitle());
 		<link rel="apple-touch-icon-precomposed" href="<?php print_unescaped(image_path($_['appid'], 'favicon-touch.png')); ?>">
 		<link rel="mask-icon" sizes="any" href="<?php print_unescaped(image_path($_['appid'], 'favicon-mask.svg')); ?>" color="<?php p($theme->getColorPrimary()); ?>">
 		<link rel="manifest" href="<?php print_unescaped(image_path($_['appid'], 'manifest.json')); ?>" crossorigin="use-credentials">
-		<script nonce="<?php p(\OC::$server->getContentSecurityPolicyNonceManager()->getNonce()) ?>" src="/themes/nc-ionos-theme/core/js/custom-elements/global-navigation/ionos-global-navigation.js" type="module"></script>
+		<script nonce="<?php p(\OC::$server->get(OC\Security\CSP\ContentSecurityPolicyNonceManager::class)->getNonce()) ?>" src="/themes/nc-ionos-theme/core/js/custom-elements/global-navigation/ionos-global-navigation.js" type="module"></script>
 		
 		<?php emit_css_loading_tags($_); ?>
 		<?php emit_script_loading_tags($_); ?>
@@ -78,9 +78,9 @@ p($theme->getTitle());
 
 		<header id="ionos-global-nav">
 			<ionos-global-nav
-			home_src="/index.php">
-				<a href="<?php p(\OC_User::getLogoutUrl(\OC::$server->getURLGenerator()))?>" style="color: var(--color-primary);">Logout</a>
-				<a href="/index.php/settings/user" style="color: var(--color-primary);">Settings</a>
+			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+				<a href="<?php p(\OC_User::getLogoutUrl(\OC::$server->get(\OCP\IURLGenerator::class)))?>" style="color: var(--color-primary)">Logout</a>
+				<a href="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index'))?>" style="color: var(--color-primary)">Settings</a>
 			</ionos-global-nav>
 		</header>
 

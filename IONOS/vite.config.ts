@@ -19,7 +19,7 @@ export default defineConfig({
 		lib: {
 			entry: 'src/App.svelte',
 			name: 'IonosGlobalNavigation',
-			formats: ['es']
+			formats: ['iife']
 		}
 	}
 });

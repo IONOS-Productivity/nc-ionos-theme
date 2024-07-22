@@ -13,6 +13,7 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			output: {
+				dir: '../core/js/custom-elements/global-navigation',
 				entryFileNames: 'ionos-global-navigation.js'
 			}
 		},

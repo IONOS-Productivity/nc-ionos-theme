@@ -1,0 +1,37 @@
+name: Header Build and Create Pull Request
+
+on:
+  push:
+    paths:
+      - 'IONOS/**'
+      - '!core/js/custom-elements/global-navigation/**'
+
+jobs:
+  build-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install dependencies
+      run: cd IONOS/ && npm ci
+
+    - name: Run build
+      run: cd IONOS/ && npm run build
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "build(header): auto build header"
+        committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+        author: ${{ github.actor }} <${{ github.actor_id }}>
+        branch: header-build-output
+        delete-branch: true
+        signoff: true
+        title: "Automated Header build output"
+        body: "This PR was created automatically by GitHub Actions"

@@ -19,6 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <script lang="ts">
 	import Icon from './components/Icon.svelte';
+	console.log("Dummy")
 
 	export let home_src = '#';
 </script>

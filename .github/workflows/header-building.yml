@@ -1,0 +1,44 @@
+name: Header - Build
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "IONOS/**"
+      - "!core/js/custom-elements/global-navigation/**"
+
+jobs:
+  build-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: cd IONOS/ && npm ci
+
+      - name: Run lint
+        run: cd IONOS/ && npm run lint
+
+      - name: Run build
+        run: cd IONOS/ && npm run build
+
+      - name: Push changes to branch auto-build-${{ github.head_ref }}-output
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git checkout -b auto-build-${{ github.head_ref }}-output
+          git add IONOS/
+          git commit -sm "build(header): automatic header build ${{ github.head_ref }}"
+          git push origin auto-build-${{ github.head_ref }}-output
+
+      - name: Remind to create a pull request
+        run: |
+          Looks like you forgot to build the new header.
+          I built it so you can pull it from auto-build-${{ github.head_ref }}-output

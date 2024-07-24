@@ -76,7 +76,8 @@ p($theme->getTitle());
 
 		<header id="ionos-global-nav">
 			<ionos-global-nav
-			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>"
+			email_src="https://email.ionos.fr/">
 				<a href="<?php p(\OC_User::getLogoutUrl(\OC::$server->get(\OCP\IURLGenerator::class)))?>" style="color: var(--color-primary)">Logout</a>
 				<a href="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index'))?>" style="color: var(--color-primary)">Settings</a>
 			</ionos-global-nav>

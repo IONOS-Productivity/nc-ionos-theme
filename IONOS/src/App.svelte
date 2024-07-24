@@ -21,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	import Icon from './components/Icon.svelte';
 
 	export let home_src = '#';
+	export let email_src: string;
 </script>
 
 <div class="ios-global-nav">
@@ -30,6 +31,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	</a>
 
 	<div class="header-right">
+		{#if email_src}
+			<a href={email_src} title="TITLE">
+				<Icon email />
+			</a>
+		{/if}
 		<slot />
 	</div>
 </div>

@@ -6,20 +6,21 @@ export default defineConfig({
 	plugins: [
 		svelte({
 			compilerOptions: {
-				customElement: true
-			}
-		})
+				customElement: true,
+			},
+		}),
 	],
 	build: {
 		rollupOptions: {
 			output: {
-				entryFileNames: 'ionos-global-navigation.js'
-			}
+				dir: '../core/js/custom-elements/global-navigation',
+				entryFileNames: 'ionos-global-navigation.js',
+			},
 		},
 		lib: {
 			entry: 'src/App.svelte',
 			name: 'IonosGlobalNavigation',
-			formats: ['iife']
-		}
-	}
+			formats: ['iife'],
+		},
+	},
 });

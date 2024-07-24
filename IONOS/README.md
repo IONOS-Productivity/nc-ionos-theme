@@ -5,19 +5,23 @@ as a Custom Element written in Svelte for convenience. Targeted to be used as He
 ## Usage
 
 ### Activate Theme
+
 1. put the a folder with the name of the theme as foldername into `/themes`
 2. activate by putting `'theme' => 'nc-ionos-theme',` into the `config.php`
 3. (optional) make theme exclusive by putting `'theme => 'nc-ionos-theme'` into the `config.php` file
 
 ### Use
+
 1. Import file
-for example using: `<script src="myscripts.js"></script>`
-2.  Insert Element
+   for example using: `<script src="myscripts.js"></script>`
+2. Insert Element
+
 ```html
 <ionos-global-nav home_src="index.html">
 	<p>This is Placed on the rigth side of the header as a slot</p>
 </ionos-global-nav>
 ```
+
 ## ⚙️ Development
 
 ### 🛠️ Setup
@@ -36,6 +40,7 @@ Make sure Node v20 is installed
 2. run `npm run dev` to start dev server
 
 ### 🚀 Build
+
 #### 💻 local
 
 ##### 📦 Container

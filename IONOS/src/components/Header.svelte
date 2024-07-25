@@ -18,7 +18,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <svelte:options customElement="ionos-global-nav" />
 
 <script lang="ts">
-	import Icon from './components/Icon.svelte';
+	import Icon from './Icon.svelte';
 
 	export let home_src = '#';
 </script>

@@ -18,3 +18,4 @@
 
 
 import "./components/Header.svelte";
+import "./components/UserMenu.svelte";

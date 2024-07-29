@@ -18,15 +18,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <svelte:options customElement="ionos-global-nav" />
 
 <script lang="ts">
-	import Icon from './components/Icon.svelte';
-
 	export let home_src = '#';
 </script>
 
 <div class="ios-global-nav">
 	<a class="header-left" href={home_src}>
-		<Icon ionosIcon />
-		<Icon easystorage />
+		<ionos-icons ionos />
+		<ionos-icons easystorage />
 	</a>
 
 	<div class="header-right">

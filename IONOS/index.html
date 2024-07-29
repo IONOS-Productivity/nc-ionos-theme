@@ -4,9 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>IONOS Global Navigation: DEV Preview</title>
+		<script type="module" src="/src/main.ts"></script>
 	</head>
 	<body>
-		<div id="app"></div>
-		<script type="module" src="/src/main.ts"></script>
+		<ionos-global-nav home_src="#">
+			<a href="#" style="color: var(--color-primary)">Logout</a>
+			<a href="#" style="color: var(--color-primary)">Settings</a>
+		</ionos-global-nav>
 	</body>
 </html>

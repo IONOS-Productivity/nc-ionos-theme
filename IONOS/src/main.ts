@@ -16,10 +16,5 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import App from './App.svelte';
-
-const app = new App({
-	target: document.getElementById('app')!,
-});
-
-export default app;
+import './App.svelte';
+import './components/Icon.svelte';

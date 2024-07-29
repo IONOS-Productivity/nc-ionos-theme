@@ -15,16 +15,19 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
+<svelte:options customElement="ionos-icons" />
 
 <script lang="ts">
-	export let ionosIcon: boolean = false;
+	export let ionos: boolean = false;
 	export let easystorage: boolean = false;
+
+	export let size: number = 1;
 </script>
 
-{#if ionosIcon}
+{#if ionos}
 	<svg
-		width="90"
-		height="26"
+		width={size * 90}
+		height={size * 26}
 		viewBox="0 0 90 26"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +45,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if easystorage}
 	<svg
 		id="easystorage"
-		width="121"
-		height="21"
+		width={size * 121}
+		height={size * 21}
 		viewBox="0 0 121 21"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg">

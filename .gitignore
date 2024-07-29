@@ -1,2 +1,6 @@
 # Built elements
 /core/js/custom-elements/*
+
+# Translations
+*.pot
+*.po

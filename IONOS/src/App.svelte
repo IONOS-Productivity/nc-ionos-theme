@@ -37,13 +37,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <style>
 	.ios-global-nav {
 		--ion-blue: var(--color-primary, rgba(0, 61, 143, 1));
-		--ion-color-primary: light-dark(var(--ion-blue), var(--ion-blue));
+		--ion-color-primary: var(--ion-blue);
 
 		--ion-white: var(--color-main-background, #fff);
-		--ion-color-main-background: light-dark(
-			var(--ion-white),
-			var(--ion-white)
-		);
+		--ion-color-main-background: var(--ion-white);
 
 		display: flex;
 		align-items: center;

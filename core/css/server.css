@@ -25,7 +25,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 }
 
 header#ionos-global-nav {
-	--color-main-background: light-dark(#fff, #fff);
+	--color-main-background: #fff;
 
 	position: sticky;
 	z-index: 1;

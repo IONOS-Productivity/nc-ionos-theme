@@ -35,7 +35,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl(): string {
-		return 'https://docs.nextcloud.com';
+		return \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_help_target_link");
 	}
 
 	/**
@@ -113,7 +113,7 @@ class OC_Theme {
 	 * @return string documentation link
 	 */
 	public function buildDocLinkToKey($key): string {
-		return $this->getDocBaseUrl() . '/server/15/go.php?to=' . $key;
+		return $this->getDocBaseUrl();
 	}
 
 

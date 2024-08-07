@@ -26,7 +26,18 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 header#ionos-global-nav {
 	--color-main-background: #fff;
+	--color-blue-ionos-b1: #dbedf8;
+	--color-blue-ionos-b2: #95caeb;
+	--color-blue-ionos-b4: #1474c4;
+	--color-cool-grey-ionos-c3: #bcc8d4;
+	--typo-color-mild: #2e4360;
+	--color-lightgray: #d7d7d7;
+	--text-color: #001b41;
 
 	position: sticky;
 	z-index: 1;
+
+	.usermenu {
+		cursor: pointer;
+	}
 }

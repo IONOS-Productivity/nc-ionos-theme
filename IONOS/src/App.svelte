@@ -31,7 +31,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		{#if $$slots.webmail}
 			<slot name="webmail" />
 		{/if}
-		<slot />
+		{#if $$slots.usermenu}
+			<slot name="usermenu" />
+		{/if}
 	</div>
 </div>
 
@@ -62,6 +64,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		display: flex;
 		align-items: center;
 		margin-left: auto;
+		gap: 16px;
 	}
 
 	@media (max-width: 768px) {

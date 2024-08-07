@@ -9,16 +9,19 @@
 	export let settingsLink = null;
 	export let helpLink = null;
 
-	export let options = [{
-		label: t('theming', 'Settings'),
-		icon: 'settings',
-		link: settingsLink,
-	}, {
-		label: t('theming', 'Help & Support'),
-		icon: 'help',
-		link: helpLink,
-		target: '_blank',
-	}];
+	export let options = [
+		{
+			label: t('theming', 'Settings'),
+			icon: 'settings',
+			link: settingsLink,
+		},
+		{
+			label: t('theming', 'Help & Support'),
+			icon: 'help',
+			link: helpLink,
+			target: '_blank',
+		},
+	];
 
 	export let onSelect = () => {};
 
@@ -46,16 +49,17 @@
 	onDestroy(() => {
 		document.removeEventListener('click', handleClickOutside);
 	});
-	console.log("helpLink", helpLink);
-	console.log("settingsLink", settingsLink);
+	console.log('helpLink', helpLink);
+	console.log('settingsLink', settingsLink);
 </script>
 
-<ionos-icons user
-			 on:click={toggleMenu}
-			 on:keydown={toggleMenu}
-			 tabindex="0"
-			 role="button"
-			 aria-label="User Menu" />
+<ionos-icons
+	user
+	on:click={toggleMenu}
+	on:keydown={toggleMenu}
+	tabindex="0"
+	role="button"
+	aria-label="User Menu" />
 
 {#if showMenu}
 	<div class="menu-container">
@@ -70,10 +74,11 @@
 		<div class="dropdown-menu">
 			{#each options as option}
 				{#if option.link}
-					<a href="{option.link}"
-					   target="{option.target || '_self'}"
-					   class="option-content"
-					   on:click="{() => handleLinkClick(option)}">
+					<a
+						href={option.link}
+						target={option.target || '_self'}
+						class="option-content"
+						on:click={() => handleLinkClick(option)}>
 						<div class="icon-and-label">
 							<ionos-icons {...{ [option.icon]: true }} />
 							<div class="label">{option.label}</div>

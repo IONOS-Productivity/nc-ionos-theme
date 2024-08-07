@@ -4,3 +4,6 @@
 # Translations
 *.pot
 *.po
+
+# JetBrains IDE
+.idea

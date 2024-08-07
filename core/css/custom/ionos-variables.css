@@ -1,0 +1,9 @@
+:root {
+	--color-blue-ionos-b1: rgba(219, 237, 248, 1);
+	--color-blue-ionos-b2: rgba(149, 202, 235, 1);
+	--color-blue-ionos-b4: rgba(20, 116, 196, 1);
+	--color-cool-grey-ionos-c3: rgba(188, 200, 212, 1);
+	--typo-color-mild: rgba(46, 67, 96, 1);
+	--color-lightgray: rgba(215, 215, 215, 1);
+	--ionos-text-color: rgba(0, 27, 65, 1);
+}

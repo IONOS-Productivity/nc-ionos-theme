@@ -85,12 +85,33 @@ p($theme->getTitle());
 					<ionos-icons webmail />
 				</a>
 			<?php } ?>
-		  <div class="usermenu" slot="usermenu" data-qa="IONOS-USER-MENU-TARGET">
-			  <ionos-user-menu
-			  	logoutLink="<?php p(\OC_User::getLogoutUrl(\OC::$server->get(\OCP\IURLGenerator::class)))?>"
-			  	settingsLink="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('simplesettings.page.index'))?>"
-			  	helpLink="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_help_target_link')) ?>" />
-		  </div>
+				<div class="usermenu" slot="usermenu" data-qa="IONOS-USER-MENU-TARGET">
+					<ionos-user-menu>
+						<b slot="user-name">
+							<?php p($_['user_displayname']); ?>
+						</b>
+						<div slot="options">
+							<ionos-menu-item
+								icon="settings"
+								label="<?php p($l->t('Settings')); ?>"
+								link="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index')) ?>"
+							></ionos-menu-item>
+
+							<ionos-menu-item
+								icon="help"
+								label="<?php p($l->t('Help & Support'),); ?>"
+								link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_help_target_link')) ?>"
+							></ionos-menu-item>
+						</div>
+						<div slot="logout">
+							<ionos-menu-item
+								icon="logout"
+								label="<?php p($l->t('Logout')); ?>"
+								link="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('core.logout')) ?>"
+							></ionos-menu-item>
+						</div>
+					</ionos-user-menu>
+				</div>
 			</ionos-global-nav>
 		</header>
 

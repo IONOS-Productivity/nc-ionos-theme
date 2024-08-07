@@ -1,8 +1,6 @@
 <svelte:options customElement="ionos-user-menu" />
 
 <script>
-	import { getCurrentUser } from '@nextcloud/auth';
-	import { translate as t } from '@nextcloud/l10n'
 	import { onDestroy } from 'svelte';
 
 	export let logoutLink = null;
@@ -11,12 +9,12 @@
 
 	export let options = [
 		{
-			label: t('theming', 'Settings'),
+			label: 'Settings',
 			icon: 'settings',
 			link: settingsLink,
 		},
 		{
-			label: t('theming', 'Help & Support'),
+			label: 'Help & Support',
 			icon: 'help',
 			link: helpLink,
 			target: '_blank',
@@ -26,7 +24,7 @@
 	export let onSelect = () => {};
 
 	let showMenu = false;
-	let displayName = getCurrentUser()?.displayName;
+	let displayName = 'Kai';
 
 	function handleLinkClick(option) {
 		onSelect(option);
@@ -66,33 +64,15 @@
 		<div class="menu-title-cell">
 			<div class="cell-content">
 				<div class="user-name">
-					<b>{displayName}</b>
+					<slot name="user-name" />
 				</div>
 			</div>
 		</div>
 		<div class="divider-line" />
 		<div class="dropdown-menu">
-			{#each options as option}
-				{#if option.link}
-					<a
-						href={option.link}
-						target={option.target || '_self'}
-						class="option-content"
-						on:click={() => handleLinkClick(option)}>
-						<div class="icon-and-label">
-							<ionos-icons {...{ [option.icon]: true }} />
-							<div class="label">{option.label}</div>
-						</div>
-					</a>
-				{/if}
-			{/each}
+			<slot name="options" />
 			<div class="divider-line" />
-			<a class="option-content" href={logoutLink} title="Logout">
-				<div class="icon-and-label">
-					<ionos-icons logout />
-					<div class="label">{t('theming', 'Logout')}</div>
-				</div>
-			</a>
+			<slot name="logout" />
 		</div>
 	</div>
 {/if}

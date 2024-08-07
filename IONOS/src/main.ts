@@ -18,3 +18,4 @@
 
 import './App.svelte';
 import './components/Icon.svelte';
+import './components/UserMenu.svelte';

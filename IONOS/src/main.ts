@@ -18,3 +18,5 @@
 
 import './App.svelte';
 import './components/Icon.svelte';
+import './components/userMenu/UserMenu.svelte';
+import './components/userMenu/UserMenuItem.svelte';

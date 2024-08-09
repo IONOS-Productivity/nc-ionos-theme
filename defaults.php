@@ -20,6 +20,10 @@
 
 OCP\Util::addScript('', 'custom-elements/global-navigation/ionos-global-navigation');
 
+/**
+ * === ATTENTION ===
+ * Please read and understand the comment in getDocBaseUrl()
+ */
 class OC_Theme {
 
 	/**
@@ -35,6 +39,15 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl(): string {
+		// At time of authoring (2024-08, v29) this is called by OC_Defaults->buildDocLinkToKey()
+		// We implement this method to catch any unexpected places that use
+		// buildDocLinkToKey(). At time of authoring we don't see references
+		// apart from disabled or hidden apps and status, configuration error
+		// and maintenance pages.
+		// If this method is not implemented lib/public/Defaults will fall back
+		// to use a "ThemingDefaults" registered in the DI container, which
+		// currently is registered by the "theming" app, which uses a config of
+		// the "theming" app.
 		return \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_help_target_link");
 	}
 

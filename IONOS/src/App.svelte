@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	export let home_src = '#';
 </script>
 
-<div class="ios-global-nav">
+<div class="ion-global-nav">
 	<a class="header-left" href={home_src}>
 		<ionos-icons ionos />
 		<ionos-icons easystorage />
@@ -31,12 +31,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		{#if $$slots.webmail}
 			<slot name="webmail" />
 		{/if}
-		<slot />
+		{#if $$slots.usermenu}
+			<slot name="usermenu" />
+		{/if}
 	</div>
 </div>
 
 <style>
-	.ios-global-nav {
+	.ion-global-nav {
 		--ion-blue: var(--color-primary, rgba(0, 61, 143, 1));
 		--ion-color-primary: var(--ion-blue);
 
@@ -62,10 +64,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		display: flex;
 		align-items: center;
 		margin-left: auto;
+		gap: 16px;
 	}
 
 	@media (max-width: 768px) {
-		.ios-global-nav {
+		.ion-global-nav {
 			padding: 0 16px;
 		}
 

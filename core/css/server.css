@@ -16,17 +16,18 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-.content {
-	margin-top: 0 !important;
-}
-
-#content {
-	margin-top: 0 !important;
-}
 
 header#ionos-global-nav {
 	--color-main-background: #fff;
 
 	position: sticky;
 	z-index: 1;
+
+	+ .content, + #content {
+		margin-top: 0 !important;
+	}
+}
+
+header#header {
+	margin-top: 64px !important;
 }

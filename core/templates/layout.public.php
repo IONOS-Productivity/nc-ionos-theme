@@ -36,6 +36,8 @@ p($theme->getTitle());
 		<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 	</div>
 
+	<?php print_unescaped($this->inc('custom/ionos_header')); ?>
+
 	<header id="header">
 		<div class="header-left">
 			<div id="nextcloud" class="header-appname">

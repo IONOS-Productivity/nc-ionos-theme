@@ -1,5 +1,6 @@
 <?php
 /**
+ * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
  * SPDX-License-Identifier: AGPL-3.0-only
@@ -75,6 +76,36 @@ p($theme->getTitle());
 						<ionos-icons webmail />
 					</a>
 				<?php } ?>
+				<div class="usermenu" slot="usermenu" data-qa="IONOS-USER-MENU-TARGET">
+					<ionos-user-menu>
+						<b slot="username">
+							<?php p($_['user_displayname']); ?>
+						</b>
+						<div slot="options">
+							<ionos-user-menu-item
+								icon="settings"
+								label="<?php p($l->t('Settings')); ?>"
+								link="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index')) ?>"
+								data-qa="IONOS-USER-MENU-SETTINGS-TARGET"
+							></ionos-user-menu-item>
+							<ionos-user-menu-item
+								icon="help"
+								label="<?php p($l->t('Help & Support'),); ?>"
+								link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_help_target_link')) ?>"
+								target="_blank"
+								data-qa="IONOS-USER-MENU-HELP-TARGET"
+							></ionos-user-menu-item>
+						</div>
+						<div slot="logout">
+							<ionos-user-menu-item
+								icon="logout"
+								label="<?php p($l->t('Logout')); ?>"
+								link="<?php p(\OC_User::getLogoutUrl(\OC::$server->get(\OCP\IURLGenerator::class)))?>"
+								data-qa="IONOS-USER-MENU-LOGOUT-TARGET"
+							></ionos-user-menu-item>
+						</div>
+					</ionos-user-menu>
+				</div>
 			</ionos-global-nav>
 		</header>
 

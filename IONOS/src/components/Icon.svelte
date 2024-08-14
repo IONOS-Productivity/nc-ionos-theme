@@ -81,8 +81,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if webmail}
 	<svg
 		id="email"
-		width={size * 16}
-		height={size * 12}
+		width={size * 26}
+		height={size * 19}
 		viewBox="0 0 16 12"
 		xmlns="http://www.w3.org/2000/svg">
 		<path

@@ -39,7 +39,7 @@ p($theme->getTitle());
 					<a href="<?php p($link) ?>"
 						target="_blank" slot="webmail"
 						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">
-						<ionos-icons webmail size="1.6" />
+						<ionos-icons webmail />
 					</a>
 				<?php } ?>
 			</ionos-global-nav>

@@ -42,7 +42,19 @@ p($theme->getTitle());
 		<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 	</div>
 
-	<?php print_unescaped($this->inc('custom/ionos_header')); ?>
+	<header id="ionos-global-nav">
+		<ionos-global-nav
+		home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+			<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
+			<?php if ($link !== null) { ?>
+				<a href="<?php p($link) ?>"
+					target="_blank" slot="webmail"
+					title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">
+					<ionos-icons webmail/>
+				</a>
+			<?php } ?>
+		</ionos-global-nav>
+	</header>
 
 	<header id="header">
 		<div class="header-left">

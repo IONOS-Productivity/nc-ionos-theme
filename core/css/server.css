@@ -21,6 +21,7 @@ header#ionos-global-nav {
 	--color-main-background: #fff;
 
 	position: sticky;
+	width: 100%;
 	z-index: 1;
 
 	+ .content, + #content {

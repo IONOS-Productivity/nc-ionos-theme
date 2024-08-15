@@ -35,8 +35,9 @@ p($theme->getTitle());
 		</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<?php if ($theme->getiTunesAppId() !== '') { ?>
-		<meta name="apple-itunes-app" content="app-id=<?php p($theme->getiTunesAppId()); ?>">
+		<?php $iosAppId = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_customclient_ios_appid"); ?>
+		<?php if ($iosAppId !== '') { ?>
+			<meta name="apple-itunes-app" content="app-id=<?php p($iosAppId); ?>">
 		<?php } ?>
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">

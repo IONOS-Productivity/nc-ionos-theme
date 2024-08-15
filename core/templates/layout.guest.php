@@ -30,6 +30,21 @@ p($theme->getTitle());
 		<?php foreach ($_['initialStates'] as $app => $initialState) { ?>
 			<input type="hidden" id="initial-state-<?php p($app); ?>" value="<?php p(base64_encode($initialState)); ?>">
 		<?php }?>
+
+		<header id="ionos-global-nav">
+			<ionos-global-nav
+			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+				<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
+				<?php if ($link !== null) { ?>
+					<a href="<?php p($link) ?>"
+						target="_blank" slot="webmail"
+						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">
+						<ionos-icons webmail size="1.6" />
+					</a>
+				<?php } ?>
+			</ionos-global-nav>
+		</header>
+
 		<div class="wrapper">
 			<div class="v-align">
 				<?php if ($_['bodyid'] === 'body-login'): ?>

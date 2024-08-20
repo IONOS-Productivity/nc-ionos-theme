@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2018-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
+ * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
 ?>
 <!DOCTYPE html>

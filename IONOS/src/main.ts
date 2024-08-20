@@ -1,6 +1,7 @@
 /*
- * SPDX-FileLicenseText: 2024 Kai Henseler <kai.henseler@strato.de>
+ * SPDX-FileLicenseText: 2024 STRATO AG
  * SPDX-License-Identifier: AGPL-3.0-or-later
+ * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as

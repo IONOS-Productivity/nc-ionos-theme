@@ -1,3 +1,12 @@
+<?php
+/**
+ * SPDX-FileCopyrightText: 2024 STRATO AG
+ * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
+ * SPDX-License-Identifier: AGPL-3.0-only
+ * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
+ */
+?>
 <!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
 	<head

@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: Kai Henseler <kai.henseler@strato.de>
+# SPDX-FileCopyrightText: 2024 STRATO AG
 # SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
 
 IMAGE_NAME = node20-dev
 CONTAINER_NAME = IONOS-GLOBAL-NAVIGATION

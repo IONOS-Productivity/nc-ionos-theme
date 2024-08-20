@@ -25,14 +25,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	export let settings: boolean = false;
 	export let help: boolean = false;
 	export let logout: boolean = false;
-
-	export let size: number = 1;
 </script>
 
 {#if ionos}
 	<svg
-		width={size * 90}
-		height={size * 26}
+		width="90"
+		height="26"
 		viewBox="0 0 90 26"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +48,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if easystorage}
 	<svg
 		id="easystorage"
-		width={size * 121}
-		height={size * 21}
+		width="121"
+		height="21"
 		viewBox="0 0 121 21"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg">
@@ -81,8 +79,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if webmail}
 	<svg
 		id="email"
-		width={size * 26}
-		height={size * 19}
+		width="26"
+		height="19"
 		viewBox="0 0 16 12"
 		xmlns="http://www.w3.org/2000/svg">
 		<path
@@ -91,8 +89,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if user}
 	<svg
 		id="user"
-		width={size * 26}
-		height={size * 26}
+		width="26"
+		height="26"
 		viewBox="0 0 24 26"
 		xmlns="http://www.w3.org/2000/svg">
 		<path
@@ -101,8 +99,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if settings}
 	<svg
 		id="settings"
-		width={size * 16}
-		height={size * 16}
+		width="16"
+		height="16"
 		viewBox="0 0 16 16"
 		xmlns="http://www.w3.org/2000/svg">
 		<g clip-path="url(#clip0_4558_20877)">
@@ -111,15 +109,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		</g>
 		<defs>
 			<clipPath id="clip0_4558_20877">
-				<rect width={size * 16} height={size * 16} fill="white" />
+				<rect width="16" height="16" fill="white" />
 			</clipPath>
 		</defs>
 	</svg>
 {:else if help}
 	<svg
 		id="help"
-		width={size * 20}
-		height={size * 20}
+		width="20"
+		height="20"
 		viewBox="0 0 20 21"
 		xmlns="http://www.w3.org/2000/svg">
 		<path
@@ -128,8 +126,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 {:else if logout}
 	<svg
 		id="logout"
-		width={size * 24}
-		height={size * 24}
+		width="24"
+		height="24"
 		viewBox="0 0 24 24"
 		xmlns="http://www.w3.org/2000/svg">
 		<path

@@ -57,15 +57,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	a {
 		text-decoration: none;
-		color: var(--ionos-text-color);
+		color: var(--ion-color-text);
 	}
 
 	a:hover {
-		background-color: var(--color-blue-ionos-b1);
+		background-color: var(--ion-color-blue-b1);
 	}
 
 	a:active {
-		background-color: var(--color-blue-ionos-b2);
+		background-color: var(--ion-color-blue-b2);
 	}
 
 	ionos-icons {

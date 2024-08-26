@@ -6,4 +6,9 @@
 	--typo-color-mild: rgba(46, 67, 96, 1);
 	--color-lightgray: rgba(215, 215, 215, 1);
 	--ionos-text-color: rgba(0, 27, 65, 1);
+
+	--ion-icon-secondary: var(--ionos-text-color);
+
+	--ion-header-shadow:0px 2px 8px 0px rgba(113, 128, 149, 0.5);
+	--ion-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }

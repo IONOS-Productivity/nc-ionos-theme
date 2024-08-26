@@ -74,7 +74,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		position: absolute;
 		top: 100%;
 		right: 0;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+		box-shadow: var(--ion-box-shadow);
 		border-radius: 8px;
 		background-color: var(--color-main-background);
 		border: 2px solid var(--color-blue-ionos-b4);
@@ -96,7 +96,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	.divider-line {
 		width: 100%;
 		position: relative;
-		border-top: 1px solid #bcc8d4;
+		border-top: 1px solid var(--color-cool-grey-ionos-c3);
 		box-sizing: border-box;
 		height: 1px;
 		flex-shrink: 0;

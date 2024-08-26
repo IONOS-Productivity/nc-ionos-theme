@@ -145,7 +145,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		&#settings,
 		&#help,
 		&#logout {
-			fill: rgba(0, 27, 65, 1);
+			fill: var(--ion-icon-secondary);
 		}
 	}
 

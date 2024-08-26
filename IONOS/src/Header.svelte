@@ -49,7 +49,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		display: flex;
 		align-items: center;
 		background-color: var(--ion-color-main-background);
-		box-shadow: 0px 2px 8px 0px rgba(113, 128, 149, 0.5);
+		box-shadow: var(--ion-header-shadow);
 		height: 64px;
 		padding: 0 24px;
 	}

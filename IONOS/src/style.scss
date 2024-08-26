@@ -1,0 +1,26 @@
+:host {
+	--ion-color-secondary-background: var(--ion-color-blue-b2);
+	--ion-color-secondary-background-hover: var(--ion-color-blue-b1);
+	--ion-color-secondary-background-active: var(--ion-color-blue-b2);
+
+	--ion-color-text: var(--ion-color-secondary);
+
+	--ion-color-icon-primary: var(--ion-color-primary);
+	--ion-color-icon-secondary: var(--ion-color-secondary);
+
+	--ion-shadow-header: 0px 2px 8px 0px rgba(113, 128, 149, 0.5);
+	--ion-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+	@media (prefers-color-scheme: dark) {
+		--ion-color-secondary-background: var(--ion-color-secondary);
+		--ion-color-secondary-background-hover: var(--ion-color-typo-mild);
+		--ion-color-secondary-background-active: var(--ion-color-secondary);
+
+		--ion-color-text: var(--ion-color-lightgray);
+
+		--ion-color-icon-primary: var(--ion-color-blue-b1);
+		--ion-color-icon-secondary: var(--ion-color-lightgray);
+
+		--ion-shadow-header: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+	}
+}

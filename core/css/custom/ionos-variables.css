@@ -1,6 +1,6 @@
 :root {
-	--ion-color-main-background: var(--color-main-background);
-	--ion-color-primary:  var(--color-primary);
+	--ion-color-main-background: var(--color-main-background, #fff);
+	--ion-color-primary:  var(--color-primary, rgba(0, 61, 143, 1));
 	--ion-color-secondary: rgba(0, 27, 65, 1);
 	--ion-color-blue-b1: rgba(219, 237, 248, 1);
 	--ion-color-blue-b2: rgba(149, 202, 235, 1);
@@ -8,29 +8,4 @@
 	--ion-color-cool-grey-c3: rgba(188, 200, 212, 1);
 	--ion-color-typo-mild: rgba(46, 67, 96, 1);
 	--ion-color-lightgray: rgba(215, 215, 215, 1);
-
-	--ion-color-secondary-background: var(--ion-color-blue-b2);
-	--ion-color-secondary-background-hover: var(--ion-color-blue-b1);
-	--ion-color-secondary-background-active: var(--ion-color-blue-b2);
-
-	--ion-color-text: var(--ion-color-secondary);
-
-	--ion-color-icon-primary: var(--ion-color-primary);
-	--ion-color-icon-secondary: var(--ion-color-secondary);
-
-	--ion-shadow-header:0px 2px 8px 0px rgba(113, 128, 149, 0.5);
-	--ion-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-
-	@media (prefers-color-scheme: dark) {
-		--ion-color-secondary-background: var(--ion-color-secondary);
-		--ion-color-secondary-background-hover: var(--ion-color-typo-mild);
-		--ion-color-secondary-background-active: var(--ion-color-secondary);
-
-		--ion-color-text: var(--ion-color-lightgray);
-
-		--ion-color-icon-primary: var(--ion-color-blue-b1);
-		--ion-color-icon-secondary: var(--ion-color-lightgray);
-
-		--ion-shadow-header: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
-	}
 }

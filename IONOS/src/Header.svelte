@@ -38,7 +38,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	@import './style.scss';
+
 	.ion-global-nav {
 		display: flex;
 		align-items: center;

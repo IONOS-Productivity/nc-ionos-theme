@@ -138,7 +138,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <style>
 	svg {
-		fill: var(--ion-color-primary);
+		fill: var(--ion-color-icon-primary);
 
 		&#email,
 		&#user,

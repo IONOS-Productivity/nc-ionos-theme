@@ -40,12 +40,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <style>
 	.ion-global-nav {
-		--ion-blue: var(--color-primary, rgba(0, 61, 143, 1));
-		--ion-color-primary: var(--ion-blue);
-
-		--ion-white: var(--color-main-background, #fff);
-		--ion-color-main-background: var(--ion-white);
-
 		display: flex;
 		align-items: center;
 		background-color: var(--ion-color-main-background);

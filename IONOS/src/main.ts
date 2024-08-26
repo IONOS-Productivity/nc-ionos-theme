@@ -17,7 +17,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import './App.svelte';
+import './Header.svelte';
 import './components/Icon.svelte';
 import './components/userMenu/UserMenu.svelte';
 import './components/userMenu/UserMenuItem.svelte';

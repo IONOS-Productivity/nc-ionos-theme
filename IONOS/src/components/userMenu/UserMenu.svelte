@@ -76,7 +76,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		right: 0;
 		box-shadow: var(--ion-shadow);
 		border-radius: 8px;
-		background-color: var(--color-main-background);
+		background-color: var(--ion-color-main-background);
 		border: 2px solid var(--ion-color-blue-b4);
 		box-sizing: border-box;
 		overflow: hidden;
@@ -113,7 +113,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	.menu-title-cell {
 		align-self: stretch;
-		background-color: var(--ion-color-blue-b1);
+		background-color: var(--ion-color-secondary-background);
 		display: flex;
 		padding: 16px;
 		cursor: default;

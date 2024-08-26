@@ -61,11 +61,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	}
 
 	a:hover {
-		background-color: var(--ion-color-blue-b1);
+		background-color: var(--ion-color-secondary-background-hover);
 	}
 
 	a:active {
-		background-color: var(--ion-color-blue-b2);
+		background-color: var(--ion-color-secondary-background-active);
 	}
 
 	ionos-icons {

@@ -42,3 +42,7 @@ ionos-user-menu:not(:defined) {
 header#header {
 	margin-top: 64px !important;
 }
+
+.app-navigation .app-navigation-entry__settings li[data-cy-files-navigation-settings-button] {
+	display: none; /* Hide file settings button in nav sidebar */
+}

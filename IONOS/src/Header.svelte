@@ -29,6 +29,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	</a>
 
 	<div class="header-right">
+		<slot name="search" />
 		{#if $$slots.webmail}
 			<slot name="webmail" />
 		{/if}

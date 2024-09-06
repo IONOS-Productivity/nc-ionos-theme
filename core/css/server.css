@@ -31,6 +31,16 @@ header#ionos-global-nav {
 	.usermenu {
 		cursor: pointer;
 	}
+
+	.header-menu.unified-search-menu {
+		position: relative;
+		right: -9px;
+		top: -3px;
+
+		svg {
+			transform: scale(1.5);
+		}
+	}
 }
 
 ionos-user-menu:not(:defined) {

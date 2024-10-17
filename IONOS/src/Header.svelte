@@ -29,7 +29,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <div class="ion-global-nav">
 	<a class="header-left" href={home_src} aria-label="Home">
 		<ionos-icons ionos></ionos-icons>
-		<ionos-icons easystorage></ionos-icons>
+		<ionos-icons product></ionos-icons>
 	</a>
 
 	<div class="header-right">

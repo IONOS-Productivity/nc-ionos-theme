@@ -56,7 +56,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getTitle(): string {
-		return 'Custom Cloud';
+		return 'HiDrive Next';
 	}
 
 	/**
@@ -64,7 +64,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getName(): string {
-		return 'Custom Cloud';
+		return 'HiDrive Next';
 	}
 
 	/**
@@ -72,7 +72,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getHTMLName(): string {
-		return 'Custom Cloud';
+		return 'HiDrive Next';
 	}
 
 	/**
@@ -80,7 +80,7 @@ class OC_Theme {
 	 * @return string entity name
 	 */
 	public function getEntity(): string {
-		return 'Custom Cloud Co.';
+		return 'IONOS SE';
 	}
 
 	/**

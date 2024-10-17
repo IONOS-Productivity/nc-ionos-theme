@@ -25,7 +25,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <div class="ion-global-nav">
 	<a class="header-left" href={home_src}>
 		<ionos-icons ionos />
-		<ionos-icons easystorage />
+		<ionos-icons product />
 	</a>
 
 	<div class="header-right">

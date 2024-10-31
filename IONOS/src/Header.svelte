@@ -19,13 +19,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <svelte:options customElement="ionos-global-nav" />
 
 <script lang="ts">
-	export let home_src = '#';
+	interface Props {
+		home_src?: string;
+	}
+
+	let { home_src = '#' }: Props = $props();
 </script>
 
 <div class="ion-global-nav">
 	<a class="header-left" href={home_src}>
-		<ionos-icons ionos />
-		<ionos-icons easystorage />
+		<ionos-icons ionos></ionos-icons>
+		<ionos-icons easystorage></ionos-icons>
 	</a>
 
 	<div class="header-right">

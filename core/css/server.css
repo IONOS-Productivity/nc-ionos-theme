@@ -34,11 +34,12 @@ header#ionos-global-nav {
 
 	.header-menu.unified-search-menu {
 		position: relative;
-		right: -9px;
+		right: -7px;
 		top: -3px;
 
 		svg {
-			transform: scale(1.75);
+			width: 26px;
+			height: 26px;
 			fill: var(--ion-color-secondary);
 		}
 	}

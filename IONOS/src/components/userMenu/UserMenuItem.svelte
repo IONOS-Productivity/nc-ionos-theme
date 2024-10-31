@@ -19,15 +19,24 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <svelte:options customElement="ionos-user-menu-item" />
 
 <script lang="ts">
-	export let icon: string = '';
-	export let label: string = '';
-	export let link: string = '';
-	export let target: string = '_self';
+	interface Props {
+		icon?: string;
+		label?: string;
+		link?: string;
+		target?: string;
+	}
+
+	let {
+		icon = '',
+		label = '',
+		link = '',
+		target = '_self'
+	}: Props = $props();
 </script>
 
 <a href={link} class="option-content" {target}>
 	<div class="icon-and-label">
-		<ionos-icons {...{ [icon]: true }} />
+		<ionos-icons {...{ [icon]: true }}></ionos-icons>
 		<div class="label">{label}</div>
 	</div>
 </a>

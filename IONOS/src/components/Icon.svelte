@@ -19,13 +19,25 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <svelte:options customElement="ionos-icons" />
 
 <script lang="ts">
-	export let ionos: boolean = false;
-	export let easystorage: boolean = false;
-	export let webmail: boolean = false;
-	export let user: boolean = false;
-	export let settings: boolean = false;
-	export let help: boolean = false;
-	export let logout: boolean = false;
+	interface Props {
+		ionos?: boolean;
+		easystorage?: boolean;
+		webmail?: boolean;
+		user?: boolean;
+		settings?: boolean;
+		help?: boolean;
+		logout?: boolean;
+	}
+
+	let {
+		ionos = false,
+		easystorage = false,
+		webmail = false,
+		user = false,
+		settings = false,
+		help = false,
+		logout = false
+	}: Props = $props();
 </script>
 
 {#if ionos}

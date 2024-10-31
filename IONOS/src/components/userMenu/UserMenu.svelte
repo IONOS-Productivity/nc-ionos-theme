@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <script lang="ts">
 	import { onDestroy } from 'svelte';
 
-	let showMenu = false;
+	let showMenu = $state(false);
 
 	function toggleMenu() {
 		showMenu = !showMenu;
@@ -44,11 +44,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <ionos-icons
 	user
-	on:click={toggleMenu}
-	on:keydown={toggleMenu}
+	onclick={toggleMenu}
+	onkeydown={toggleMenu}
 	tabindex="0"
 	role="button"
-	aria-label="User Menu" />
+	aria-label="User Menu"></ionos-icons>
 
 {#if showMenu}
 	<div class="menu-container">
@@ -59,10 +59,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				</div>
 			</div>
 		</div>
-		<div class="divider-line" />
+		<div class="divider-line"></div>
 		<div class="dropdown-menu">
 			<slot name="options" />
-			<div class="divider-line" />
+			<div class="divider-line"></div>
 			<slot name="logout" />
 		</div>
 	</div>

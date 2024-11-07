@@ -27,7 +27,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 </script>
 
 <div class="ion-global-nav">
-	<a class="header-left" href={home_src}>
+	<a class="header-left" href={home_src} aria-label="Home">
 		<ionos-icons ionos></ionos-icons>
 		<ionos-icons easystorage></ionos-icons>
 	</a>

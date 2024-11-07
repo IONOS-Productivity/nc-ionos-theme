@@ -36,7 +36,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		user = false,
 		settings = false,
 		help = false,
-		logout = false
+		logout = false,
 	}: Props = $props();
 </script>
 

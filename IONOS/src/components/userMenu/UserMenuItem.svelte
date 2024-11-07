@@ -30,7 +30,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		icon = '',
 		label = '',
 		link = '',
-		target = '_self'
+		target = '_self',
 	}: Props = $props();
 </script>
 

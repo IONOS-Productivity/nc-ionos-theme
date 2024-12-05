@@ -1,9 +1,5 @@
 # Built elements
 /core/js/custom-elements/*
 
-# Translations
-*.pot
-*.po
-
 # JetBrains IDE
 .idea

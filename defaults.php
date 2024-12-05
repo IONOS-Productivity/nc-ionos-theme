@@ -25,6 +25,7 @@ OCP\Util::addScript('', 'custom-elements/global-navigation/ionos-global-navigati
  * Please read and understand the comment in getDocBaseUrl()
  */
 class OC_Theme {
+	private const PRODUCT_NAME = 'HiDrive Next';
 
 	/**
 	 * Returns the base URL
@@ -56,15 +57,23 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getTitle(): string {
-		return 'HiDrive Next';
+		return self::PRODUCT_NAME;
 	}
 
 	/**
 	 * Returns the short name of the software
-	 * @return string title
+	 * @return string name
 	 */
 	public function getName(): string {
-		return 'HiDrive Next';
+		return self::PRODUCT_NAME;
+	}
+
+	/**
+	 * Returns the name of the product
+	 * @return string name
+	 */
+	public function getProductName(): string {
+		return self::PRODUCT_NAME;
 	}
 
 	/**
@@ -72,7 +81,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getHTMLName(): string {
-		return 'HiDrive Next';
+		return self::PRODUCT_NAME;
 	}
 
 	/**

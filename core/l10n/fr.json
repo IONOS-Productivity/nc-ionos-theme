@@ -1,6 +1,4 @@
-OC.L10N.register(
-    "core",
-    {
+{ "translations": {
     "Get your own free account" : "Obtenez votre compte personnel gratuit",
     "Go to %s" : "Aller à %s",
     "Help & Support" : "Aide et assistance",
@@ -13,5 +11,5 @@ OC.L10N.register(
     "Skip to navigation of app" : "Passer à la navigation d'application",
     "Storage used" : "Stockage utilisé",
     "This application requires JavaScript for correct operation. Please {linkstart}enable JavaScript{linkend} and reload the page." : "Cette application requiert JavaScript pour fonctionner correctement. Veuillez {linkstart}activer JavaScript{linkend} et recharger la page."
-},
-"nplurals=2; plural=(n > 1);");
+},"pluralForm" :"nplurals=2; plural=(n > 1);"
+}

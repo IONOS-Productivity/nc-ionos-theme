@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Language: es-ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Phrase (phrase.com)\n"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:133
+msgid "Get your own free account"
+msgstr "Consigue tu propia cuenta gratuita"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:59
+#, php-format
+msgid "Go to %s"
+msgstr "Ir a %s"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:99
+msgid "Help & Support"
+msgstr "Ayuda y soporte"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:82
+msgid "IONOS WEBMAIL"
+msgstr "IONOS WEBMAIL"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:108
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+msgid "of {quota}"
+msgstr "de {quota}"
+
+msgid "Search apps, files, tags, messages"
+msgstr "Buscar archivos, carpetas"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:93
+msgid "Settings"
+msgstr "Configuración"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:73
+msgid "Skip to main content"
+msgstr "Saltar al contenido principal"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:74
+msgid "Skip to navigation of app"
+msgstr "Saltar a la navegación de la app"
+
+msgid "Storage used"
+msgstr "Almacenamiento utilizado"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.noscript.warning.php:14
+msgid "This application requires JavaScript for correct operation. Please {linkstart}enable JavaScript{linkend} and reload the page."
+msgstr "Esta aplicación requiere JavaScript para operar correctamente. Por favor, {linkstart}habilite JavaScript{linkend} y recargue la página."

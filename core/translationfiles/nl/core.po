@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Language: nl-NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Phrase (phrase.com)\n"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:133
+msgid "Get your own free account"
+msgstr "Maak je eigen gratis account"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:59
+#, php-format
+msgid "Go to %s"
+msgstr "Ga naar %s"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:99
+msgid "Help & Support"
+msgstr "Hulp en ondersteuning"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:82
+msgid "IONOS WEBMAIL"
+msgstr "IONOS WEBMAIL"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:108
+msgid "Logout"
+msgstr "Afmelden"
+
+msgid "of {quota}"
+msgstr "van {quota}"
+
+msgid "Search apps, files, tags, messages"
+msgstr "Bestanden en mappen zoeken"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:93
+msgid "Settings"
+msgstr "Instellingen"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:73
+msgid "Skip to main content"
+msgstr "Ga naar hoofdinhoud"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:74
+msgid "Skip to navigation of app"
+msgstr "Ga naar navigatie van app"
+
+msgid "Storage used"
+msgstr "Gebruikte opslag"
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.noscript.warning.php:14
+msgid "This application requires JavaScript for correct operation. Please {linkstart}enable JavaScript{linkend} and reload the page."
+msgstr "Deze applicatie heeft JavaScript nodig. {linkstart}Activeer JavaScript{linkend} en ververs deze pagina."

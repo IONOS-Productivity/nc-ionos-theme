@@ -1,2 +1,82 @@
 @import url('./server.css');
 
+body#body-login {
+	background-color: var(--ion-color-main-background);
+	font-family: var(--font-face);
+
+	header#ionos-global-nav {
+		display: flex;
+		justify-content: center;
+
+		::part(ion-global-nav) {
+			box-shadow: none;
+			margin: 70px 0 -50px;
+			transform: scale(1.8);
+
+			@media only screen and (max-width: 1199px) {
+				margin: 10px 0 -10px;
+				transform: none;
+			}
+		}
+	}
+
+	header #header .logo {
+		display: none;
+	}
+
+	footer.guest-box {
+		display: none;
+	}
+
+	div.picker-window {
+		h2 {
+			font-size: 32px;
+			margin-bottom: 48px;
+		}
+
+		p.info {
+			font-size: 18px;
+			padding: 0 48px;
+		}
+
+		div.notecard.warning {
+			background-color: var(--ion-color-main-background);
+			border: 2px solid var(--ion-color-amber-y5);
+			border-radius: 16px;
+			font-size: 14px;
+			margin: 24px 48px;
+			padding: 24px;
+
+			h3 {
+				color: var(--ion-color-amber-y6);
+				font-size: 16px;
+				font-weight: 600;
+			}
+		}
+
+		form input[type="submit"] {
+			background-color: var(--ion-color-blue-b7);
+			background-image: none;
+			border-radius: 30px;
+			margin-bottom: 14px;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		a#app-token-login {
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+
+	div.picker-window.small {
+		h2 {
+			margin-bottom: 56px;
+		}
+
+		form div#submit-wrapper {
+			margin-top: 24px;
+			margin-bottom: 12px;
+		}
+	}
+}

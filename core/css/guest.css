@@ -1,2 +1,156 @@
 @import url('./server.css');
 
+body#body-login:not(:has(.login-box)) {
+	background-color: var(--ion-color-cool-grey-c1);
+	font-family: var(--font-face);
+
+	header#ionos-global-nav {
+		display: flex;
+		justify-content: center;
+
+		::part(ion-global-nav) {
+			background-color: var(--ion-color-cool-grey-c1);
+			box-shadow: none;
+			max-height: 36px;
+			margin: 10px 0 -10px;
+			transform: scale(0.9);
+
+			@media only screen and (min-width: 768px) {
+				transform: none;
+			}
+
+			@media only screen and (min-width: 1200px) {
+				margin: 70px 0 -50px;
+				transform: scale(1.8);
+			}
+		}
+	}
+
+	header #header .logo {
+		display: none;
+	}
+
+	footer.guest-box {
+		display: none;
+	}
+
+	div.wrapper main {
+		div.picker-window {
+			background-color: var(--ion-color-main-background);
+			max-width: 500px;
+			padding: 12px;
+
+			h2 {
+				font-size: 20px;
+				color: var(--ion-color-secondary);
+				margin: 0;
+
+				@media only screen and (min-width: 768px) {
+					font-size: 24px;
+					margin-top: 24px;
+					margin-bottom: 48px;
+				}
+
+				@media only screen and (min-width: 1200px) {
+					font-size: 32px;
+				}
+			}
+
+			p.info {
+				font-size: 14px;
+				padding: 0 12px;
+				color: var(--ion-color-secondary);
+
+				@media only screen and (min-width: 1024px) {
+					font-size: 16px;
+					padding: 0 56px;
+				}
+
+				@media only screen and (min-width: 1200px) {
+					font-size: 18px;
+				}
+			}
+
+			div.notecard.warning {
+				background-color: var(--ion-color-main-background);
+				border: 2px solid var(--ion-color-amber-y5);
+				border-radius: 16px;
+				font-size: 14px;
+				padding: 18px;
+
+				h3 {
+					color: var(--ion-color-amber-y6);
+					font-size: 16px;
+					font-weight: 600;
+					margin: 6px 0 24px;
+				}
+
+				h3:before {
+					content: "";
+					display: inline-block;
+					background-image: url('../../../../custom-npms/nc-mdi-svg/dist/svg/alert.svg');
+					vertical-align: middle;
+					margin-right: 16px;
+					padding: 2px;
+					width: 22px;
+					height: 24px;
+					/* adjust color of background-image svg to equal rgba(195, 107, 0, 1) */
+					filter: brightness(0) saturate(100%) invert(38%) sepia(100%) saturate(746%) hue-rotate(360deg) brightness(100%) contrast(100%);
+				}
+
+				p {
+					color: var(--ion-color-secondary);
+				}
+
+				@media only screen and (min-width: 768px) {
+					padding: 24px;
+					margin: 24px 48px;
+				}
+			}
+
+			form input[type="submit"] {
+				background-color: var(--ion-color-blue-b7);
+				background-image: none;
+				border-radius: 30px;
+				margin-bottom: 0;
+				height: 36px;
+				font-size: 14px;
+				font-weight: 600;
+
+				@media only screen and (min-width: 768px) {
+					margin-bottom: 14px;
+				}
+			}
+
+			a#app-token-login {
+				font-size: 14px;
+				font-weight: 600;
+				color: var(--ion-color-secondary);
+			}
+		}
+
+		div.picker-window.small {
+			h2 {
+				margin-top: 24px;
+				margin-bottom: 24px;
+
+				@media only screen and (min-width: 1200px) {
+					margin-bottom: 56px;
+				}
+			}
+
+			form div#submit-wrapper {
+				margin-bottom: 12px;
+
+				@media only screen and (min-width: 768px) {
+					margin-top: 24px;
+				}
+			}
+		}
+
+		/* prevent error messages to overlap with header on smaller screens */
+		div.guest-box {
+			margin-top: 24px;
+		}
+	}
+}

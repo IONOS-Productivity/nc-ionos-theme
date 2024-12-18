@@ -26,7 +26,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	let { home_src = '#' }: Props = $props();
 </script>
 
-<div class="ion-global-nav">
+<div class="ion-global-nav" part="ion-global-nav">
 	<a class="header-left" href={home_src} aria-label="Home">
 		<ionos-icons ionos></ionos-icons>
 		<ionos-icons product></ionos-icons>

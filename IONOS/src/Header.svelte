@@ -32,9 +32,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<ionos-icons product></ionos-icons>
 	</a>
 	<div class="header-right">
-		<slot name="search" />
-		<slot name="webmail" />
-		<slot name="usermenu" />
+		<slot></slot>
 	</div>
 </div>
 

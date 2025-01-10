@@ -5,7 +5,7 @@
  * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
  * SPDX-License-Identifier: AGPL-3.0-only
  * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
- */ 
+ */
 ?>
 
 <?php
@@ -70,19 +70,19 @@ p($theme->getTitle());
 		<header id="ionos-global-nav">
 			<ionos-global-nav
 			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
-				<div slot="search" data-qa="IONOS-SEARCH-TARGET">
+				<div data-qa="IONOS-SEARCH-TARGET">
 					<div id="unified-search"></div>
 				</div>
 
 				<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
 				<?php if ($link !== null) { ?>
 					<a href="<?php p($link) ?>"
-						target="_blank" slot="webmail"
+						target="_blank"
 						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">
 						<ionos-icons webmail />
 					</a>
 				<?php } ?>
-				<div class="usermenu" slot="usermenu" data-qa="IONOS-USER-MENU-TARGET">
+				<div class="usermenu" data-qa="IONOS-USER-MENU-TARGET">
 					<ionos-user-menu>
 						<b slot="username">
 							<?php p($_['user_displayname']); ?>

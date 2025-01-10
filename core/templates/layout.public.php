@@ -44,74 +44,57 @@ p($theme->getTitle());
 		<?php if ($_['id-app-content'] !== null) { ?><a href="<?php p($_['id-app-content']); ?>" class="button primary skip-navigation skip-content"><?php p($l->t('Skip to main content')); ?></a><?php } ?>
 		<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 	</div>
-
 	<header id="ionos-global-nav">
 		<ionos-global-nav
 		home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+			<?php
+			/** @var \OCP\AppFramework\Http\Template\PublicTemplateResponse $template */
+			if (isset($template) && $template->getActionCount() !== 0) {
+				$primary = $template->getPrimaryAction();
+				$others = $template->getOtherActions(); ?>
+						<span id="header-primary-action" data-qa="IONOS-DOWNLOAD-SHARE-TARGET" class="<?php if ($template->getActionCount() === 1) {
+							p($primary->getIcon());
+						} ?>">
+							<a href="<?php p($primary->getLink()); ?>" class="primary button">
+								<span><?php p($primary->getLabel()) ?></span>
+							</a>
+						</span>
+						<?php if ($template->getActionCount() > 1) { ?>
+						<div id="header-secondary-action" data-qa="IONOS-DOWNLOAD-MENU-TARGET">
+							<button id="header-actions-toggle" class="menutoggle icon-more-dark"></button>
+							<div id="header-actions-menu" class="popovermenu menu">
+								<ul>
+									<?php
+										/** @var \OCP\AppFramework\Http\Template\IMenuAction $action */
+										foreach ($others as $action) {
+											print_unescaped($action->render());
+										}
+							?>
+								</ul>
+							</div>
+						</div>
+						<?php } ?>
+					<?php
+			} ?>
 		</ionos-global-nav>
 	</header>
 
-	<header id="header">
-		<div class="header-left">
-			<div id="nextcloud" class="header-appname">
-				<?php if ($_['logoUrl']): ?>
-					<a href="<?php print_unescaped($_['logoUrl']); ?>"
-					   aria-label="<?php p($l->t('Go to %s', [$_['logoUrl']])); ?>">
-						<div class="logo logo-icon"></div>
-					</a>
-				<?php else: ?>
-					<div class="logo logo-icon"></div>
-				<?php endif; ?>
-
-				<div class="header-info">
-					<span class="header-title">
-						<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
-							<?php p($template->getHeaderTitle()); ?>
-						<?php } else { ?>
-							<?php	p($theme->getName()); ?>
-						<?php } ?>
-					</span>
-					<?php if (isset($template) && $template->getHeaderDetails() !== '') { ?>
-						<span class="header-shared-by">
-							<?php p($template->getHeaderDetails()); ?>
-						</span>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-
-		<div class="header-right">
-		<?php
-/** @var \OCP\AppFramework\Http\Template\PublicTemplateResponse $template */
-if (isset($template) && $template->getActionCount() !== 0) {
-	$primary = $template->getPrimaryAction();
-	$others = $template->getOtherActions(); ?>
-			<span id="header-primary-action" class="<?php if ($template->getActionCount() === 1) {
-				p($primary->getIcon());
-			} ?>">
-				<a href="<?php p($primary->getLink()); ?>" class="primary button">
-					<span><?php p($primary->getLabel()) ?></span>
-				</a>
-			</span>
-			<?php if ($template->getActionCount() > 1) { ?>
-			<div id="header-secondary-action">
-				<button id="header-actions-toggle" class="menutoggle icon-more-white"></button>
-				<div id="header-actions-menu" class="popovermenu menu">
-					<ul>
-						<?php
-							/** @var \OCP\AppFramework\Http\Template\IMenuAction $action */
-							foreach ($others as $action) {
-								print_unescaped($action->render());
-							}
-				?>
-					</ul>
-				</div>
-			</div>
+	<div class="header-info">
+		<span class="header-title">
+		<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
+				<?php p($template->getHeaderTitle()); ?>
+			<?php } else { ?>
+				<?php	p($theme->getName()); ?>
 			<?php } ?>
-		<?php
-} ?>
-		</div>
-	</header>
+		</span>
+		<?php if (isset($template) && $template->getHeaderDetails() !== '') { ?>
+			<span class="header-shared-by">
+				<?php p($template->getHeaderDetails()); ?>
+			</span>
+		<?php } ?>
+	</div>
+
+
 	<main id="content" class="app-<?php p($_['appid']) ?>">
 		<h1 class="hidden-visually">
 			<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>

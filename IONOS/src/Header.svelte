@@ -31,15 +31,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<ionos-icons ionos></ionos-icons>
 		<ionos-icons product></ionos-icons>
 	</a>
-
 	<div class="header-right">
 		<slot name="search" />
-		{#if $$slots.webmail}
-			<slot name="webmail" />
-		{/if}
-		{#if $$slots.usermenu}
-			<slot name="usermenu" />
-		{/if}
+		<slot name="webmail" />
+		<slot name="usermenu" />
 	</div>
 </div>
 

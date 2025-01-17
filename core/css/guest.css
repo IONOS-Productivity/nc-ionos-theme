@@ -4,7 +4,7 @@ body#body-login:not(:has(.login-box)) {
 	background-color: var(--ion-color-cool-grey-c1);
 	font-family: var(--font-face);
 
-	header#ionos-global-nav {
+	&:has(.picker-window) header#ionos-global-nav {
 		display: flex;
 		justify-content: center;
 

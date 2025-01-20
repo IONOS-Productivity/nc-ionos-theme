@@ -56,6 +56,7 @@ p($theme->getTitle());
 							p($primary->getIcon());
 						} ?>">
 							<a href="<?php p($primary->getLink()); ?>" class="primary button">
+							<ionos-icons <?php p($primary->getId()) ?> class="download"></ionos-icons>
 								<span><?php p($primary->getLabel()) ?></span>
 							</a>
 						</span>

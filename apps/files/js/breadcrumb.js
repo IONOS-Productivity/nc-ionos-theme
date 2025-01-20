@@ -207,11 +207,12 @@
 				linkclass: 'icon-more menutoggle'
 			});
 			// root part
+			let filename = $('#filename').val();
 			crumbs.push({
-				name: t('files', 'Home'),
+				name: filename ? filename : t('files', 'Home'),
 				dir: '/',
 				class: 'crumbhome',
-				linkclass: rootIcon || 'icon-home'
+				linkclass: filename ? '' : rootIcon || 'icon-home'
 			});
 			for (var i = 0; i < parts.length; i++) {
 				var part = parts[i];

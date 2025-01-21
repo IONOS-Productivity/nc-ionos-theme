@@ -173,7 +173,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <style>
 	svg {
-		fill: var(--ion-color-icon-primary);
+		fill: var(--ion-brand-icon);
 
 		&#email,
 		&#user,
@@ -181,7 +181,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		&#help,
 		&#logout,
 		&#moremenu {
-			fill: var(--ion-color-icon-secondary);
+			fill: var(--ion-text);
 		}
 	}
 

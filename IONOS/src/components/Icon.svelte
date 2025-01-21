@@ -22,6 +22,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	interface Props {
 		ionos?: boolean;
 		download?: boolean;
+		moremenu?: boolean;
 		product?: boolean;
 		webmail?: boolean;
 		user?: boolean;
@@ -33,6 +34,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	let {
 		ionos = false,
 		download = false,
+		moremenu = false,
 		product = false,
 		webmail = false,
 		user = false,
@@ -69,6 +71,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		viewBox="0 0 24 24">
 		<path
 			d="M13.5 1.5c0-0.8296874999999999-0.6703125000000001-1.5-1.5-1.5s-1.5 0.6703125000000001-1.5 1.5l0 11.376562499999999-3.4406250000000003-3.4406250000000003c-0.5859375-0.5859375-1.5374999999999999-0.5859375-2.1234374999999996 0s-0.5859375 1.5374999999999999 0 2.1234374999999996l6 6c0.5859375 0.5859375 1.5374999999999999 0.5859375 2.1234374999999996 0l6-6c0.5859375-0.5859375 0.5859375-1.5374999999999999 0-2.1234374999999996s-1.5374999999999999-0.5859375-2.1234374999999996 0L13.5 12.876562499999999 13.5 1.5zM3 16.5c-1.6546874999999999 0-3 1.3453125-3 3l0 1.5c0 1.6546874999999999 1.3453125 3 3 3l18 0c1.6546874999999999 0 3-1.3453125 3-3l0-1.5c0-1.6546874999999999-1.3453125-3-3-3l-4.7578125 0-2.1234374999999996 2.1234374999999996c-1.171875 1.171875-3.0703125 1.171875-4.2421875 0L7.7578125 16.5 3 16.5z m17.25 2.625a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 1 1 0-2.25z" />
+	</svg>
+{:else if moremenu}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		id="moremenu"
+		viewBox="0 0 24 24"
+		width="24"
+		height="24">
+		<path
+			d="M1.875 12a2.625 2.625 0 1 1 5.25 0A2.625 2.625 0 1 1 1.875 12z m7.5 0a2.625 2.625 0 1 1 5.25 0 2.625 2.625 0 1 1-5.25 0z m10.125-2.625a2.625 2.625 0 1 1 0 5.25 2.625 2.625 0 1 1 0-5.25z" />
 	</svg>
 {:else if product}
 	<svg
@@ -167,7 +179,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		&#user,
 		&#settings,
 		&#help,
-		&#logout {
+		&#logout,
+		&#moremenu {
 			fill: var(--ion-color-icon-secondary);
 		}
 	}

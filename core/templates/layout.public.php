@@ -62,7 +62,7 @@ p($theme->getTitle());
 						</span>
 						<?php if ($template->getActionCount() > 1) { ?>
 						<div id="header-secondary-action" data-qa="IONOS-DOWNLOAD-MENU-TARGET">
-							<button id="header-actions-toggle" class="menutoggle icon-more-dark"></button>
+							<ionos-icons id="header-actions-toggle" class="menutoggle" moremenu></ionos-icons>
 							<div id="header-actions-menu" class="popovermenu menu">
 								<ul>
 									<?php

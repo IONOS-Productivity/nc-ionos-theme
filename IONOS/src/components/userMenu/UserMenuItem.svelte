@@ -66,15 +66,20 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	a {
 		text-decoration: none;
-		color: var(--ion-color-text);
+		color: var(--ion-context-menu-item-text);
 	}
 
 	a:hover {
-		background-color: var(--ion-color-secondary-background-hover);
+		background-color: var(--ion-context-menu-item-background-hover);
 	}
 
 	a:active {
-		background-color: var(--ion-color-secondary-background-active);
+		background-color: var(--ion-context-menu-item-background-active);
+	}
+
+	a:disabled {
+		color: var(--ion-context-menu-item-text-disabled);
+		background-color: var(--ion-context-menu-item-background-disabled);
 	}
 
 	ionos-icons {

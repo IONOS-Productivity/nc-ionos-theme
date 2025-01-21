@@ -77,11 +77,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		box-shadow: var(--ion-shadow);
 		border-radius: 8px;
 		background-color: var(--ion-color-main-background);
-		border: 2px solid var(--ion-color-blue-b4);
+		border: 2px solid var(--ion-context-menu-border);
 		box-sizing: border-box;
 		overflow: hidden;
 		font-size: 16px;
-		color: var(--ion-color-text);
+		color: var(--ion-text);
 	}
 
 	.cell-content {
@@ -96,7 +96,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	.divider-line {
 		width: 100%;
 		position: relative;
-		border-top: 1px solid var(--ion-color-cool-grey-c3);
+		border-top: 1px solid var(--ion-context-menu-divider);
 		box-sizing: border-box;
 		height: 1px;
 		flex-shrink: 0;
@@ -113,7 +113,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	.menu-title-cell {
 		align-self: stretch;
-		background-color: var(--ion-color-secondary-background);
+		background-color: var(--ion-context-menu-title-background);
 		display: flex;
 		padding: 16px;
 		cursor: default;

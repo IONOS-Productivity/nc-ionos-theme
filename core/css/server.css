@@ -41,7 +41,7 @@ header#ionos-global-nav {
 		svg {
 			width: 26px;
 			height: 26px;
-			fill: var(--ion-color-secondary);
+			fill: var(--ion-text);
 		}
 	}
 }

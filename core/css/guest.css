@@ -31,7 +31,7 @@ body#body-login:not(:has(.login-box)) {
 	}
 
 	footer.guest-box {
-		display: none;
+		display: inline-block;
 	}
 
 	div.wrapper main {

@@ -32,6 +32,7 @@ body#body-login:not(:has(.login-box)) {
 
 	footer.guest-box {
 		display: inline-block;
+		box-shadow: none;
 	}
 
 	div.wrapper main {
@@ -151,6 +152,7 @@ body#body-login:not(:has(.login-box)) {
 		/* prevent error messages to overlap with header on smaller screens */
 		div.guest-box {
 			margin-top: 24px;
+			box-shadow: none;
 		}
 	}
 }

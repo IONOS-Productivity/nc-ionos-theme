@@ -30,6 +30,11 @@ body#body-login:not(:has(.login-box)) {
 		display: none;
 	}
 
+	.guest-box {
+		background-color: light-dark(var(--ion-color-main-background), var(--ion-color-cool-grey-c8));
+		color: var(--ion-text);
+	}
+
 	footer.guest-box {
 		display: inline-block;
 		box-shadow: none;

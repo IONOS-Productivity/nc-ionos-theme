@@ -1,7 +1,7 @@
 @import url('./server.css');
 
 body#body-login:not(:has(.login-box)) {
-	background-color: #fff;
+	background-color: light-dark(var(--ion-color-cool-grey-c1), var(--ion-color-blue-b9));
 	font-family: var(--font-face);
 
 	&:has(.picker-window) header#ionos-global-nav {
@@ -9,7 +9,7 @@ body#body-login:not(:has(.login-box)) {
 		justify-content: center;
 
 		::part(ion-global-nav) {
-			background-color: var(--ion-color-cool-grey-c1);
+			background-color: light-dark(var(--ion-color-cool-grey-c1), var(--ion-color-blue-b9));
 			box-shadow: none;
 			max-height: 36px;
 			margin: 10px 0 -10px;
@@ -33,18 +33,18 @@ body#body-login:not(:has(.login-box)) {
 	footer.guest-box {
 		display: inline-block;
 		box-shadow: none;
-		background-color: #fff;
+		background-color: light-dark(var(--ion-color-main-background), var(--ion-color-cool-grey-c8));
 	}
 
 	div.wrapper main {
 		div.picker-window {
-			background-color: var(--ion-color-main-background);
+			background-color: light-dark(var(--ion-color-main-background), var(--ion-color-cool-grey-c8));
 			max-width: 500px;
 			padding: 12px;
 
 			h2 {
 				font-size: 20px;
-				color: var(--ion-color-secondary);
+				color: var(--ion-text);
 				margin: 0;
 
 				@media only screen and (min-width: 768px) {
@@ -61,7 +61,7 @@ body#body-login:not(:has(.login-box)) {
 			p.info {
 				font-size: 14px;
 				padding: 0 12px;
-				color: var(--ion-color-secondary);
+				color: var(--ion-text);
 
 				@media only screen and (min-width: 1024px) {
 					font-size: 16px;
@@ -74,14 +74,14 @@ body#body-login:not(:has(.login-box)) {
 			}
 
 			div.notecard.warning {
-				background-color: var(--ion-color-main-background);
-				border: 2px solid var(--ion-color-amber-y5);
+				background-color: light-dark(var(--ion-color-main-background), var(--ion-color-cool-grey-c8));
+				border: 2px solid light-dark(var(--ion-color-amber-y5), var(--ion-color-amber-y4));
 				border-radius: 16px;
 				font-size: 14px;
 				padding: 18px;
 
 				h3 {
-					color: var(--ion-color-amber-y6);
+					color: light-dark(var(--ion-color-amber-y6), var(--ion-color-amber-y3));
 					font-size: 16px;
 					font-weight: 600;
 					margin: 6px 0 24px;
@@ -101,7 +101,7 @@ body#body-login:not(:has(.login-box)) {
 				}
 
 				p {
-					color: var(--ion-color-secondary);
+					color: var(--ion-text);
 				}
 
 				@media only screen and (min-width: 768px) {
@@ -111,13 +111,25 @@ body#body-login:not(:has(.login-box)) {
 			}
 
 			form input[type="submit"] {
-				background-color: var(--ion-color-blue-b7);
+				background-color: var(--ion-button-primary-background-default);
 				background-image: none;
 				border-radius: 30px;
 				margin-bottom: 0;
 				height: 36px;
 				font-size: 14px;
 				font-weight: 600;
+
+				&:hover {
+					background-color: var(--ion-button-primary-background-hover);
+				}
+
+				&:active {
+					background-color: var(--ion-button-primary-background-active);
+				}
+
+				&:disabled {
+					background-color: var(--ion-button-primary-background-disabled);
+				}
 
 				@media only screen and (min-width: 768px) {
 					margin-bottom: 14px;
@@ -127,7 +139,7 @@ body#body-login:not(:has(.login-box)) {
 			a#app-token-login {
 				font-size: 14px;
 				font-weight: 600;
-				color: var(--ion-color-secondary);
+				color: var(--ion-text);
 			}
 		}
 

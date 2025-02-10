@@ -32,7 +32,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getBaseUrl(): string {
-		return 'https://nextcloud.com';
+		return \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_homepage");
 	}
 
 	/**
@@ -97,7 +97,7 @@ class OC_Theme {
 	 * @return string slogan
 	 */
 	public function getSlogan(): string {
-		return 'Your custom cloud, personalized for you!';
+		return 'powered by IONOS';
 	}
 
 	/**

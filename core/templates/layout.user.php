@@ -20,7 +20,21 @@ $getUserAvatar = static function (int $size) use ($_): string {
 		'size' => $size,
 		'v' => $_['userAvatarVersion']
 	]);
-}
+};
+
+/**
+ * Check if logged user has email product
+ * @return bool
+ */
+$hasEmailProduct = static function (): bool {
+	$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
+	$userData = $userOIDCBackend->getUserData();
+
+	$availableProductsString = $userData["raw"]["https://easynextcloud.ionos.com/claims/availableProducts"];
+
+	$availableProducts = (array)json_decode($availableProductsString);
+	return in_array("email", $availableProducts);
+};
 
 ?><!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
@@ -75,7 +89,7 @@ p($theme->getTitle());
 				</div>
 
 				<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
-				<?php if ($link !== null) { ?>
+				<?php if ($link !== null && $hasEmailProduct()) { ?>
 					<a href="<?php p($link) ?>"
 						target="_blank"
 						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">

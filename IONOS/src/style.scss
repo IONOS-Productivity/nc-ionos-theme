@@ -13,6 +13,6 @@
 		var(--ion-color-blue-b1);
 	--ion-color-secondary-background-active: var(--ion-color-blue-b2);
 
-	--ion-shadow-header: 0px 2px 8px 0px rgba(113, 128, 149, 0.5);
+	--ion-shadow-header: 0px 2px 8px 0px var(--color-shadow-header);
 	--ion-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }

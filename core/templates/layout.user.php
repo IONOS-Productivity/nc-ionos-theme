@@ -27,13 +27,19 @@ $getUserAvatar = static function (int $size) use ($_): string {
  * @return bool
  */
 $hasEmailProduct = static function (): bool {
-	$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
-	$userData = $userOIDCBackend->getUserData();
+	try {
+		$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
+		$userData = $userOIDCBackend->getUserData();
 
-	$availableProductsString = $userData["raw"]["https://easynextcloud.ionos.com/claims/availableProducts"];
+		$availableProductsString = $userData["raw"]["https://easynextcloud.ionos.com/claims/availableProducts"] ?? "[]";
 
-	$availableProducts = (array)json_decode($availableProductsString);
-	return in_array("email", $availableProducts);
+		$availableProducts = (array)json_decode($availableProductsString);
+		return in_array("email", $availableProducts);
+	} catch (\Error $e) {
+		return false;
+	} catch (\Exception $e) {
+		return false;
+	}
 };
 
 ?><!DOCTYPE html>

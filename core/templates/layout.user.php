@@ -6,22 +6,6 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
-?>
-
-<?php
-/**
- * @var \OC_Defaults $theme
- * @var array $_
- */
-
-$getUserAvatar = static function (int $size) use ($_): string {
-	return \OC::$server->getURLGenerator()->linkToRoute('core.avatar.getAvatar', [
-		'userId' => $_['user_uid'],
-		'size' => $size,
-		'v' => $_['userAvatarVersion']
-	]);
-}
-
 ?><!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
 	<head data-user="<?php p($_['user_uid']); ?>" data-user-displayname="<?php p($_['user_displayname']); ?>" data-requesttoken="<?php p($_['requesttoken']); ?>">

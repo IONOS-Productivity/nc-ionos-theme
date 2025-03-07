@@ -124,8 +124,7 @@ class OC_Theme {
 	 * @return string long footer
 	 */
 	public function getLongFooter(): string {
-		$footer = '© ' . date('Y') . ' <a href="' . $this->getBaseUrl() . '" target="_blank">' . $this->getEntity() . '</a>' .
-			'<br/>' . $this->getSlogan();
+		$footer = '© ' . date('Y') . ' <a href="' . $this->getBaseUrl() . '" target="_blank">' . $this->getEntity() . '</a>';
 
 		return $footer;
 	}

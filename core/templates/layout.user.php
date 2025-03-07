@@ -6,21 +6,29 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
-?>
 
-<?php
 /**
- * @var \OC_Defaults $theme
- * @var array $_
+ * Check if logged user has email product
+ * @return bool
  */
+$hasEmailProduct = static function (): bool {
+	try {
+		$availableProductsClaim = \OC::$server->get(\OC\SystemConfig::class)->getValue("user_oidc.claims.available_products");
+		if ($availableProductsClaim === '') {
+			return false;
+		}
 
-$getUserAvatar = static function (int $size) use ($_): string {
-	return \OC::$server->getURLGenerator()->linkToRoute('core.avatar.getAvatar', [
-		'userId' => $_['user_uid'],
-		'size' => $size,
-		'v' => $_['userAvatarVersion']
-	]);
-}
+		$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
+		$userData = $userOIDCBackend->getUserData();
+
+		$availableProductsString = $userData["raw"][$availableProductsClaim] ?? "[]";
+
+		$availableProducts = (array)json_decode($availableProductsString);
+		return in_array("email", $availableProducts);
+	} catch (\Error|\Exception) {
+		return false;
+	}
+};
 
 ?><!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
@@ -75,7 +83,7 @@ p($theme->getTitle());
 				</div>
 
 				<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
-				<?php if ($link !== null) { ?>
+				<?php if ($link !== null && $hasEmailProduct()) { ?>
 					<a href="<?php p($link) ?>"
 						target="_blank"
 						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">

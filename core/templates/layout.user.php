@@ -13,7 +13,7 @@
  */
 $hasEmailProduct = static function (): bool {
 	try {
-		$availableProductsClaim = \OC::$server->get(\OC\SystemConfig::class)->getValue("user_oidc.claims.available_products");
+		$availableProductsClaim = \OC::$server->get(\OC\SystemConfig::class)->getValue("available_products_claim");
 		if ($availableProductsClaim === '') {
 			return false;
 		}

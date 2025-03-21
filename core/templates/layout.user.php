@@ -21,9 +21,11 @@ $hasEmailProduct = static function (): bool {
 		$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
 		$userData = $userOIDCBackend->getUserData();
 
-		$availableProductsString = $userData["raw"][$availableProductsClaim] ?? "[]";
+		$availableProductsData = $userData["raw"][$availableProductsClaim] ?? [];
 
-		$availableProducts = (array)json_decode($availableProductsString);
+		// If the claim is not an array, try to decode it
+		$availableProducts = is_array($availableProductsData) ? $availableProductsData : (array)json_decode($availableProductsData);
+
 		return in_array("email", $availableProducts);
 	} catch (\Error|\Exception) {
 		return false;

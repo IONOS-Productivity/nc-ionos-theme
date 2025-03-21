@@ -26,7 +26,7 @@ $hasEmailProduct = static function (): bool {
 		// If the claim is not an array, try to decode it
 		$availableProducts = is_array($availableProductsData) ? $availableProductsData : (array)json_decode($availableProductsData);
 
-		return in_array("email", $availableProducts);
+		return in_array("mail", $availableProducts);
 	} catch (\Error|\Exception) {
 		return false;
 	}

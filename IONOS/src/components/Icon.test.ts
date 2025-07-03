@@ -124,7 +124,7 @@ describe('Icon Component Logic', () => {
 			webmail: { width: '26', height: '19', viewBox: '0 0 16 12', id: 'email' },
 		};
 
-		Object.entries(iconAttributes).forEach(([iconType, attrs]) => {
+		Object.values(iconAttributes).forEach((attrs) => {
 			expect(attrs.width).toBeDefined();
 			expect(attrs.height).toBeDefined();
 			expect(attrs.viewBox).toBeDefined();

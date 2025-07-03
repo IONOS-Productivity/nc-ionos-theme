@@ -5,8 +5,9 @@ This project uses [Vitest](https://vitest.dev/) as the testing framework for Sve
 ## Getting Started
 
 ### Prerequisites
-- Node.js and npm installed
-- Dependencies installed: `npm install`
+
+-   Node.js and npm installed
+-   Dependencies installed: `npm install`
 
 ### Running Tests
 
@@ -29,35 +30,38 @@ npm run test:ui
 ### Components Tested
 
 1. **Icon.svelte** (`src/components/Icon.test.ts`)
-   - Boolean props validation for all icon types
-   - Conditional rendering logic
-   - CSS styling rules
-   - Icon attributes verification
+
+    - Boolean props validation for all icon types
+    - Conditional rendering logic
+    - CSS styling rules
+    - Icon attributes verification
 
 2. **UserMenuItem.svelte** (`src/components/userMenu/UserMenuItem.test.ts`)
-   - Props interface validation
-   - URL and target handling
-   - CSS structure validation
-   - Accessibility features
+
+    - Props interface validation
+    - URL and target handling
+    - CSS structure validation
+    - Accessibility features
 
 3. **UserMenu.svelte** (`src/components/userMenu/UserMenu.test.ts`)
-   - State management (show/hide toggle)
-   - Event handling (click, keyboard)
-   - Component structure and styling
-   - Accessibility attributes
+
+    - State management (show/hide toggle)
+    - Event handling (click, keyboard)
+    - Component structure and styling
+    - Accessibility attributes
 
 4. **Header.svelte** (`src/Header.test.ts`)
-   - Props and URL handling
-   - Component structure validation
-   - CSS and responsive design
-   - Custom element configuration
+    - Props and URL handling
+    - Component structure validation
+    - CSS and responsive design
+    - Custom element configuration
 
 ### Test Types
 
-- **Unit Tests**: Testing individual component logic and props
-- **Integration Tests**: Testing component interactions and state management
-- **Accessibility Tests**: Ensuring proper ARIA attributes and keyboard navigation
-- **CSS Structure Tests**: Validating class names and styling logic
+-   **Unit Tests**: Testing individual component logic and props
+-   **Integration Tests**: Testing component interactions and state management
+-   **Accessibility Tests**: Ensuring proper ARIA attributes and keyboard navigation
+-   **CSS Structure Tests**: Validating class names and styling logic
 
 ## Testing Approach
 
@@ -71,15 +75,17 @@ Due to the custom element nature of these Svelte components, our tests focus on:
 ## Configuration
 
 ### Vitest Configuration (`vitest.config.ts`)
-- Uses `happy-dom` environment for fast DOM simulation
-- Disables custom elements for testing to avoid SSR issues
-- Includes coverage reporting with v8 provider
-- Excludes test files and config files from coverage
+
+-   Uses `happy-dom` environment for fast DOM simulation
+-   Disables custom elements for testing to avoid SSR issues
+-   Includes coverage reporting with v8 provider
+-   Excludes test files and config files from coverage
 
 ### Test Setup (`src/test-setup.ts`)
-- Imports jest-dom matchers for enhanced assertions
-- Sets up CSS custom properties used by components
-- Resets DOM state between tests
+
+-   Imports jest-dom matchers for enhanced assertions
+-   Sets up CSS custom properties used by components
+-   Resets DOM state between tests
 
 ## Adding New Tests
 
@@ -87,9 +93,9 @@ Due to the custom element nature of these Svelte components, our tests focus on:
 
 1. Create a test file: `ComponentName.test.ts`
 2. Import necessary testing utilities:
-   ```typescript
-   import { describe, it, expect } from 'vitest';
-   ```
+    ```typescript
+    import { describe, it, expect } from 'vitest';
+    ```
 3. Follow the existing pattern of testing logic rather than DOM rendering
 4. Focus on props validation, conditional logic, and accessibility
 
@@ -99,18 +105,18 @@ Due to the custom element nature of these Svelte components, our tests focus on:
 import { describe, it, expect } from 'vitest';
 
 describe('ComponentName Logic', () => {
-  it('should handle default props correctly', () => {
-    const defaultProps = { prop: 'value' };
-    expect(defaultProps.prop).toBe('value');
-  });
+	it('should handle default props correctly', () => {
+		const defaultProps = { prop: 'value' };
+		expect(defaultProps.prop).toBe('value');
+	});
 
-  it('should validate component structure', () => {
-    const structure = {
-      wrapper: 'div',
-      class: 'component-class',
-    };
-    expect(structure.wrapper).toBe('div');
-  });
+	it('should validate component structure', () => {
+		const structure = {
+			wrapper: 'div',
+			class: 'component-class',
+		};
+		expect(structure.wrapper).toBe('div');
+	});
 });
 ```
 
@@ -126,19 +132,21 @@ describe('ComponentName Logic', () => {
 ## Continuous Integration
 
 Tests run automatically on:
-- Pull requests
-- Main branch commits
-- Release builds
+
+-   Pull requests
+-   Main branch commits
+-   Release builds
 
 All tests must pass before code can be merged.
 
 ## Coverage Goals
 
 While line coverage is limited due to the custom element testing approach, we aim for:
-- 100% of component props tested
-- 100% of conditional logic paths tested
-- 100% of accessibility features validated
-- 100% of CSS classes and structure tested
+
+-   100% of component props tested
+-   100% of conditional logic paths tested
+-   100% of accessibility features validated
+-   100% of CSS classes and structure tested
 
 ## Troubleshooting
 
@@ -150,6 +158,6 @@ While line coverage is limited due to the custom element testing approach, we ai
 
 ### Getting Help
 
-- Check existing test files for patterns
-- Review Vitest documentation: https://vitest.dev/
-- Check Svelte testing guide: https://svelte.dev/docs/testing
+-   Check existing test files for patterns
+-   Review Vitest documentation: https://vitest.dev/
+-   Check Svelte testing guide: https://svelte.dev/docs/testing

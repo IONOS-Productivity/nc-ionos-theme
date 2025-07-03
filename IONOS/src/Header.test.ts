@@ -6,7 +6,7 @@ describe('Header Component Logic', () => {
 		const defaultProps = {
 			home_src: '#',
 		};
-		
+
 		expect(defaultProps.home_src).toBe('#');
 	});
 
@@ -14,7 +14,7 @@ describe('Header Component Logic', () => {
 		const customProps = {
 			home_src: '/custom-home',
 		};
-		
+
 		expect(customProps.home_src).toBe('/custom-home');
 	});
 
@@ -41,8 +41,8 @@ describe('Header Component Logic', () => {
 			'#section',
 			'/dashboard/overview',
 		];
-		
-		testUrls.forEach(url => {
+
+		testUrls.forEach((url) => {
 			const props = { home_src: url };
 			expect(props.home_src).toBe(url);
 			expect(typeof props.home_src).toBe('string');
@@ -102,7 +102,7 @@ describe('Header Component Logic', () => {
 		const accessibilityAttributes = {
 			homeLink: {
 				'aria-label': 'Home',
-				role: 'link',
+				'role': 'link',
 			},
 		};
 

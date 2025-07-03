@@ -9,7 +9,7 @@ describe('UserMenuItem Component Logic', () => {
 			link: '',
 			target: '_self',
 		};
-		
+
 		expect(defaultProps.icon).toBe('');
 		expect(defaultProps.label).toBe('');
 		expect(defaultProps.link).toBe('');
@@ -23,7 +23,7 @@ describe('UserMenuItem Component Logic', () => {
 			link: '/settings',
 			target: '_blank',
 		};
-		
+
 		expect(customProps.icon).toBe('settings');
 		expect(customProps.label).toBe('Settings');
 		expect(customProps.link).toBe('/settings');
@@ -52,9 +52,16 @@ describe('UserMenuItem Component Logic', () => {
 	});
 
 	it('should handle different icon types', () => {
-		const validIcons = ['settings', 'help', 'logout', 'user', 'download', 'webmail'];
-		
-		validIcons.forEach(iconType => {
+		const validIcons = [
+			'settings',
+			'help',
+			'logout',
+			'user',
+			'download',
+			'webmail',
+		];
+
+		validIcons.forEach((iconType) => {
 			const props = { icon: iconType };
 			expect(props.icon).toBe(iconType);
 			expect(validIcons.includes(iconType)).toBe(true);
@@ -63,8 +70,8 @@ describe('UserMenuItem Component Logic', () => {
 
 	it('should handle different target values', () => {
 		const validTargets = ['_self', '_blank', '_parent', '_top'];
-		
-		validTargets.forEach(target => {
+
+		validTargets.forEach((target) => {
 			const props = { target };
 			expect(props.target).toBe(target);
 		});
@@ -80,8 +87,8 @@ describe('UserMenuItem Component Logic', () => {
 			'#section',
 			'',
 		];
-		
-		testUrls.forEach(url => {
+
+		testUrls.forEach((url) => {
 			const props = { link: url };
 			expect(typeof props.link).toBe('string');
 			expect(props.link).toBe(url);
@@ -134,21 +141,30 @@ describe('UserMenuItem Component Logic', () => {
 
 		expect(componentStructure.wrapper).toBe('a');
 		expect(componentStructure.wrapperClass).toBe('option-content');
-		expect(componentStructure.children.iconAndLabel.class).toBe('icon-and-label');
-		expect(componentStructure.children.iconAndLabel.children.label.class).toBe('label');
+		expect(componentStructure.children.iconAndLabel.class).toBe(
+			'icon-and-label',
+		);
+		expect(
+			componentStructure.children.iconAndLabel.children.label.class,
+		).toBe('label');
 	});
 
 	it('should handle empty and null values gracefully', () => {
 		const edgeCaseProps = [
 			{ icon: '', label: '', link: '', target: '' },
 			{ icon: null, label: null, link: null, target: null },
-			{ icon: undefined, label: undefined, link: undefined, target: undefined },
+			{
+				icon: undefined,
+				label: undefined,
+				link: undefined,
+				target: undefined,
+			},
 		];
 
 		edgeCaseProps.forEach((props, index) => {
 			// All props should be handled gracefully
 			expect(typeof props).toBe('object');
-			
+
 			if (index === 0) {
 				// Empty strings
 				expect(props.icon).toBe('');
@@ -159,8 +175,8 @@ describe('UserMenuItem Component Logic', () => {
 
 	it('should support accessibility attributes', () => {
 		const accessibilityProps = {
-			role: 'menuitem',
-			tabindex: 0,
+			'role': 'menuitem',
+			'tabindex': 0,
 			'aria-label': 'Menu item',
 		};
 

@@ -6,7 +6,7 @@ describe('Icon Component Logic', () => {
 		// Test the logic by checking icon attributes
 		const ionosProps = { ionos: true };
 		expect(ionosProps.ionos).toBe(true);
-		
+
 		// Check that other props are false by default
 		const defaultProps = {
 			ionos: false,
@@ -19,7 +19,7 @@ describe('Icon Component Logic', () => {
 			product: false,
 			webmail: false,
 		};
-		
+
 		expect(defaultProps.ionos).toBe(false);
 		expect(defaultProps.download).toBe(false);
 	});
@@ -56,22 +56,34 @@ describe('Icon Component Logic', () => {
 			logout: false,
 		};
 
-		Object.values(iconInterface).forEach(value => {
+		Object.values(iconInterface).forEach((value) => {
 			expect(value).toBe(false);
 		});
 	});
 
 	it('should support multiple icon types', () => {
-		const iconTypes = ['ionos', 'download', 'user', 'settings', 'help', 'logout', 'moremenu', 'product', 'webmail'];
-		
-		iconTypes.forEach(iconType => {
+		const iconTypes = [
+			'ionos',
+			'download',
+			'user',
+			'settings',
+			'help',
+			'logout',
+			'moremenu',
+			'product',
+			'webmail',
+		];
+
+		iconTypes.forEach((iconType) => {
 			const props = { [iconType]: true };
 			expect(props[iconType]).toBe(true);
-			
+
 			// Ensure other props remain false
-			iconTypes.filter(type => type !== iconType).forEach(otherType => {
-				expect(props[otherType]).toBeUndefined();
-			});
+			iconTypes
+				.filter((type) => type !== iconType)
+				.forEach((otherType) => {
+					expect(props[otherType]).toBeUndefined();
+				});
 		});
 	});
 
@@ -107,21 +119,63 @@ describe('Icon Component Logic', () => {
 
 		// When multiple props are true, first condition should win
 		expect(getRenderedIcon({ ionos: true, download: true })).toBe('ionos');
-		expect(getRenderedIcon({ download: true, user: true })).toBe('download');
+		expect(getRenderedIcon({ download: true, user: true })).toBe(
+			'download',
+		);
 		expect(getRenderedIcon({ user: true, ionos: true })).toBe('ionos');
 	});
 
 	it('should validate icon attributes for different types', () => {
 		const iconAttributes = {
 			ionos: { width: '90', height: '26', viewBox: '0 0 90 26' },
-			download: { width: '14', height: '14', viewBox: '0 0 24 24', id: 'download' },
-			user: { width: '26', height: '26', viewBox: '0 0 24 26', id: 'user' },
-			settings: { width: '16', height: '16', viewBox: '0 0 16 16', id: 'settings' },
-			help: { width: '20', height: '20', viewBox: '0 0 20 21', id: 'help' },
-			logout: { width: '24', height: '24', viewBox: '0 0 24 24', id: 'logout' },
-			moremenu: { width: '24', height: '24', viewBox: '0 0 24 24', id: 'moremenu' },
-			product: { width: '127', height: '17', viewBox: '0 0 127 17', id: 'product' },
-			webmail: { width: '26', height: '19', viewBox: '0 0 16 12', id: 'email' },
+			download: {
+				width: '14',
+				height: '14',
+				viewBox: '0 0 24 24',
+				id: 'download',
+			},
+			user: {
+				width: '26',
+				height: '26',
+				viewBox: '0 0 24 26',
+				id: 'user',
+			},
+			settings: {
+				width: '16',
+				height: '16',
+				viewBox: '0 0 16 16',
+				id: 'settings',
+			},
+			help: {
+				width: '20',
+				height: '20',
+				viewBox: '0 0 20 21',
+				id: 'help',
+			},
+			logout: {
+				width: '24',
+				height: '24',
+				viewBox: '0 0 24 24',
+				id: 'logout',
+			},
+			moremenu: {
+				width: '24',
+				height: '24',
+				viewBox: '0 0 24 24',
+				id: 'moremenu',
+			},
+			product: {
+				width: '127',
+				height: '17',
+				viewBox: '0 0 127 17',
+				id: 'product',
+			},
+			webmail: {
+				width: '26',
+				height: '19',
+				viewBox: '0 0 16 12',
+				id: 'email',
+			},
 		};
 
 		Object.values(iconAttributes).forEach((attrs) => {
@@ -134,16 +188,24 @@ describe('Icon Component Logic', () => {
 	it('should have appropriate CSS styling logic', () => {
 		const iconCSSRules = {
 			brandIcons: ['ionos', 'product'],
-			uiIcons: ['user', 'settings', 'help', 'logout', 'moremenu', 'download', 'webmail'],
+			uiIcons: [
+				'user',
+				'settings',
+				'help',
+				'logout',
+				'moremenu',
+				'download',
+				'webmail',
+			],
 		};
 
 		// Brand icons should use --ion-brand-icon
-		iconCSSRules.brandIcons.forEach(icon => {
+		iconCSSRules.brandIcons.forEach((icon) => {
 			expect(iconCSSRules.brandIcons.includes(icon)).toBe(true);
 		});
 
 		// UI icons should use --ion-text
-		iconCSSRules.uiIcons.forEach(icon => {
+		iconCSSRules.uiIcons.forEach((icon) => {
 			expect(iconCSSRules.uiIcons.includes(icon)).toBe(true);
 		});
 	});

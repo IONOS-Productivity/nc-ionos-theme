@@ -8,16 +8,16 @@ describe('UserMenu Component Logic', () => {
 
 	it('should handle menu state correctly', () => {
 		let showMenu = false;
-		
+
 		function toggleMenu() {
 			showMenu = !showMenu;
 		}
 
 		expect(showMenu).toBe(false);
-		
+
 		toggleMenu();
 		expect(showMenu).toBe(true);
-		
+
 		toggleMenu();
 		expect(showMenu).toBe(false);
 	});
@@ -26,11 +26,11 @@ describe('UserMenu Component Logic', () => {
 		const mockElement = {
 			contains: vi.fn(),
 		};
-		
+
 		const mockEvent = {
 			target: document.createElement('div'),
 		};
-		
+
 		function handleClickOutside(event, menu, showMenu) {
 			if (showMenu && menu && !menu.contains(event.target)) {
 				return false; // Should hide menu
@@ -41,11 +41,11 @@ describe('UserMenu Component Logic', () => {
 		// Test when click is outside
 		mockElement.contains.mockReturnValue(false);
 		expect(handleClickOutside(mockEvent, mockElement, true)).toBe(false);
-		
+
 		// Test when click is inside
 		mockElement.contains.mockReturnValue(true);
 		expect(handleClickOutside(mockEvent, mockElement, true)).toBe(true);
-		
+
 		// Test when menu is not shown
 		expect(handleClickOutside(mockEvent, mockElement, false)).toBe(false);
 	});
@@ -68,10 +68,10 @@ describe('UserMenu Component Logic', () => {
 			trigger: {
 				element: 'ionos-icons',
 				attributes: {
-					user: true,
-					role: 'button',
+					'user': true,
+					'role': 'button',
 					'aria-label': 'User Menu',
-					tabindex: '0',
+					'tabindex': '0',
 				},
 			},
 			menu: {
@@ -116,14 +116,18 @@ describe('UserMenu Component Logic', () => {
 		expect(menuStructure.trigger.element).toBe('ionos-icons');
 		expect(menuStructure.trigger.attributes.role).toBe('button');
 		expect(menuStructure.menu.class).toBe('menu-container');
-		expect(menuStructure.menu.children.titleCell.class).toBe('menu-title-cell');
-		expect(menuStructure.menu.children.dropdownMenu.class).toBe('dropdown-menu');
+		expect(menuStructure.menu.children.titleCell.class).toBe(
+			'menu-title-cell',
+		);
+		expect(menuStructure.menu.children.dropdownMenu.class).toBe(
+			'dropdown-menu',
+		);
 	});
 
 	it('should handle event listener setup and cleanup', () => {
 		const mockAddEventListener = vi.fn();
 		const mockRemoveEventListener = vi.fn();
-		
+
 		const mockDocument = {
 			addEventListener: mockAddEventListener,
 			removeEventListener: mockRemoveEventListener,
@@ -140,10 +144,10 @@ describe('UserMenu Component Logic', () => {
 		}
 
 		const handler = vi.fn();
-		
+
 		onMount(handler);
 		expect(mockAddEventListener).toHaveBeenCalledWith('click', handler);
-		
+
 		onDestroy(handler);
 		expect(mockRemoveEventListener).toHaveBeenCalledWith('click', handler);
 	});
@@ -181,13 +185,13 @@ describe('UserMenu Component Logic', () => {
 	it('should handle accessibility attributes', () => {
 		const accessibilityProps = {
 			trigger: {
-				role: 'button',
+				'role': 'button',
 				'aria-label': 'User Menu',
-				tabindex: '0',
+				'tabindex': '0',
 				'aria-expanded': false, // Would be dynamic based on showMenu
 			},
 			menu: {
-				role: 'menu',
+				'role': 'menu',
 				'aria-labelledby': 'user-menu-trigger',
 			},
 		};
@@ -221,18 +225,18 @@ describe('UserMenu Component Logic', () => {
 		}
 
 		const menuState = new MenuState();
-		
+
 		expect(menuState.isVisible).toBe(false);
-		
+
 		menuState.toggle();
 		expect(menuState.isVisible).toBe(true);
-		
+
 		menuState.hide();
 		expect(menuState.isVisible).toBe(false);
-		
+
 		menuState.show();
 		expect(menuState.isVisible).toBe(true);
-		
+
 		menuState.toggle();
 		expect(menuState.isVisible).toBe(false);
 	});
@@ -257,7 +261,7 @@ describe('UserMenu Component Logic', () => {
 				'.menu-container': { style: {} },
 				'ionos-icons[user]': { click: vi.fn() },
 			};
-			
+
 			return mockElements[selector] || null;
 		}
 

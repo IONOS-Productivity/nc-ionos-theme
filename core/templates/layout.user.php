@@ -44,7 +44,9 @@ p($theme->getTitle());
 ?>
 		</title>
 		<meta name="csp-nonce" nonce="<?php p($_['cspNonce']); /* Do not pass into "content" to prevent exfiltration */ ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0<?php if (isset($_['viewport_maximum_scale'])) {
+			p(', maximum-scale=' . $_['viewport_maximum_scale']);
+		} ?>">
 
 		<?php $iosAppId = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_customclient_ios_appid"); ?>
 		<?php if ($iosAppId !== '') { ?>

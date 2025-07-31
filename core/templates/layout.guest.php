@@ -37,10 +37,7 @@ p($theme->getTitle());
 	</head>
 	<body id="<?php p($_['bodyid']);?>">
 		<?php include 'layout.noscript.warning.php'; ?>
-		<?php foreach ($_['initialStates'] as $app => $initialState) { ?>
-			<input type="hidden" id="initial-state-<?php p($app); ?>" value="<?php p(base64_encode($initialState)); ?>">
-		<?php }?>
-
+		<?php include 'layout.initial-state.php'; ?>
 		<header id="ionos-global-nav">
 			<ionos-global-nav
 			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">

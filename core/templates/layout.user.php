@@ -38,8 +38,8 @@ $hasEmailProduct = static function (): bool {
 		<meta charset="utf-8">
 		<title>
 			<?php
-				p(!empty($_['pageTitle']) && $_['pageTitle'] !== $_['application'] ? $_['pageTitle'].' - ' : '');
-p(!empty($_['application']) ? $_['application'].' - ' : '');
+				p(!empty($_['pageTitle']) && $_['pageTitle'] !== $_['application'] ? $_['pageTitle'] . ' - ' : '');
+p(!empty($_['application']) ? $_['application'] . ' - ' : '');
 p($theme->getTitle());
 ?>
 		</title>
@@ -128,7 +128,7 @@ p($theme->getTitle());
 		<main id="content" class="app-<?php p($_['appid']) ?>">
 			<h1 class="hidden-visually" id="page-heading-level-1">
 				<?php p((!empty($_['application']) && !empty($_['pageTitle']) && $_['application'] != $_['pageTitle'])
-					? $_['application'].': '.$_['pageTitle']
+					? $_['application'] . ': ' . $_['pageTitle']
 					: (!empty($_['pageTitle']) ? $_['pageTitle'] : $theme->getName())
 				); ?>
 			</h1>

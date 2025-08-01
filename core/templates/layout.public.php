@@ -48,36 +48,7 @@ p($theme->getTitle());
 	<header id="ionos-global-nav">
 		<ionos-global-nav
 		home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
-			<?php
-			/** @var \OCP\AppFramework\Http\Template\PublicTemplateResponse $template */
-			if (isset($template) && $template->getActionCount() !== 0) {
-				$primary = $template->getPrimaryAction();
-				$others = $template->getOtherActions(); ?>
-						<span id="header-primary-action" data-qa="IONOS-DOWNLOAD-SHARE-TARGET" class="<?php if ($template->getActionCount() === 1) {
-							p($primary->getIcon());
-						} ?>">
-							<a href="<?php p($primary->getLink()); ?>" class="primary button">
-							<ionos-icons <?php p($primary->getId()) ?> class="download"></ionos-icons>
-								<span><?php p($primary->getLabel()) ?></span>
-							</a>
-						</span>
-						<?php if ($template->getActionCount() > 1) { ?>
-						<div id="header-secondary-action" data-qa="IONOS-DOWNLOAD-MENU-TARGET">
-							<ionos-icons id="header-actions-toggle" class="menutoggle" moremenu></ionos-icons>
-							<div id="header-actions-menu" class="popovermenu menu">
-								<ul>
-									<?php
-										/** @var \OCP\AppFramework\Http\Template\IMenuAction $action */
-										foreach ($others as $action) {
-											print_unescaped($action->render());
-										}
-							?>
-								</ul>
-							</div>
-						</div>
-						<?php } ?>
-					<?php
-			} ?>
+			<div id="public-page-menu"></div>
 		</ionos-global-nav>
 	</header>
 
@@ -99,11 +70,12 @@ p($theme->getTitle());
 
 	<main id="content" class="app-<?php p($_['appid']) ?>">
 		<h1 class="hidden-visually">
-			<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
-				<?php p($template->getHeaderTitle()); ?>
-			<?php } else { ?>
-				<?php	p($theme->getName()); ?>
-			<?php } ?>
+			<?php
+			if (isset($template) && $template->getHeaderTitle() !== '') {
+				p($template->getHeaderTitle());
+			} else {
+				p($theme->getName());
+			} ?>
 		</h1>
 		<?php print_unescaped($_['content']); ?>
 	</main>

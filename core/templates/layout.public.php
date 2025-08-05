@@ -82,7 +82,7 @@ p($theme->getTitle());
 
 	<div class="header-info">
 		<span class="header-title">
-		<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
+			<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
 				<?php p($template->getHeaderTitle()); ?>
 			<?php } else { ?>
 				<?php	p($theme->getName()); ?>

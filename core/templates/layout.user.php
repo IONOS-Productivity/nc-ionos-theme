@@ -38,7 +38,7 @@ $hasEmailProduct = static function (): bool {
 		<meta charset="utf-8">
 		<title>
 			<?php
-				p(!empty($_['pageTitle']) && $_['pageTitle'] !== $_['application'] ? $_['pageTitle'] . ' - ' : '');
+				p(!empty($_['pageTitle']) && (empty($_['application']) || $_['pageTitle'] !== $_['application']) ? $_['pageTitle'] . ' - ' : '');
 p(!empty($_['application']) ? $_['application'] . ' - ' : '');
 p($theme->getTitle());
 ?>

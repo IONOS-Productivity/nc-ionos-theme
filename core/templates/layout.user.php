@@ -125,7 +125,7 @@ p($theme->getTitle());
 			</ionos-global-nav>
 		</header>
 
-		<main id="content" class="app-<?php p($_['appid']) ?>">
+		<div id="content" class="app-<?php p($_['appid']) ?>">
 			<h1 class="hidden-visually" id="page-heading-level-1">
 				<?php p((!empty($_['application']) && !empty($_['pageTitle']) && $_['application'] != $_['pageTitle'])
 					? $_['application'] . ': ' . $_['pageTitle']
@@ -133,7 +133,7 @@ p($theme->getTitle());
 				); ?>
 			</h1>
 			<?php print_unescaped($_['content']); ?>
-		</main>
+		</div>
 		<div id="profiler-toolbar"></div>
 	</body>
 </html>

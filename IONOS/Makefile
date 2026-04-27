@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
 
-IMAGE_NAME = node20-dev
+IMAGE_NAME = node24-dev
 CONTAINER_NAME = IONOS-GLOBAL-NAVIGATION
 
 .PHONY: help

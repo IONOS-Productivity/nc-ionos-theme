@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
 
-FROM node:20-buster
+FROM reg.1u1.it/docker.io/library/node:24-bookworm
 
 ENV NODE_ENV=development
 

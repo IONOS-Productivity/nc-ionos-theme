@@ -5,6 +5,7 @@ OC.L10N.register(
     "Go to %s" : "Aller à %s",
     "Help & Support" : "Aide et assistance",
     "IONOS WEBMAIL" : "IONOS WEBMAIL",
+    "Login & Security" : "Connexion et sécurité",
     "Logout" : "Déconnexion",
     "of {quota}" : "de {quota}",
     "Search apps, files, tags, messages" : "Rechercher des fichiers, des dossiers",

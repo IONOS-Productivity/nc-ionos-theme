@@ -105,6 +105,13 @@ p($theme->getTitle());
 								data-qa="IONOS-USER-MENU-SETTINGS-TARGET"
 							></ionos-user-menu-item>
 							<ionos-user-menu-item
+									icon="accountkey"
+									label="<?php p($l->t('Login & Security')); ?>"
+									link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_security_target_link')) ?>"
+									target="_blank"
+									data-qa="IONOS-USER-MENU-LOGIN-SECURITY-TARGET"
+								></ionos-user-menu-item>
+							<ionos-user-menu-item
 								icon="help"
 								label="<?php p($l->t('Help & Support'),); ?>"
 								link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_help_target_link')) ?>"

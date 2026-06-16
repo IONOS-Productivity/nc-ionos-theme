@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nextcloud 3.14159\n"
 "Report-Msgid-Bugs-To: translations\\@example.com\n"
-"POT-Creation-Date: 2024-11-26 13:25+0000\n"
+"POT-Creation-Date: 2026-06-16 10:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,36 +24,35 @@ msgid ""
 msgstr ""
 
 #: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:44
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:66
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:76
 msgid "Skip to main content"
 msgstr ""
 
 #: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:45
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:67
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:77
 msgid "Skip to navigation of app"
 msgstr ""
 
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:59
-#, php-format
-msgid "Go to %s"
-msgstr ""
-
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:133
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.public.php:117
 msgid "Get your own free account"
 msgstr ""
 
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:81
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:91
 msgid "IONOS WEBMAIL"
 msgstr ""
 
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:93
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:103
 msgid "Settings"
 msgstr ""
 
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:99
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:109
+msgid "Login & Security"
+msgstr ""
+
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:115
 msgid "Help & Support"
 msgstr ""
 
-#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:108
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:124
 msgid "Logout"
 msgstr ""

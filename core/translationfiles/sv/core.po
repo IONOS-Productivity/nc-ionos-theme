@@ -24,6 +24,10 @@ msgstr "Hjälp & Support"
 msgid "IONOS WEBMAIL"
 msgstr "IONOS WEBMAIL"
 
+#: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:109
+msgid "Login & Security"
+msgstr "Inloggning och säkerhet"
+
 #: /var/www/html/themes/nc-ionos-theme/core/templates/layout.user.php:108
 msgid "Logout"
 msgstr "Logga ut"

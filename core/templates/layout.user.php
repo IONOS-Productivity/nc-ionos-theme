@@ -1,11 +1,22 @@
 <?php
 /**
- * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
  * SPDX-License-Identifier: AGPL-3.0-only
- * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
+
+/**
+ * @var \OC_Defaults $theme
+ * @var array $_
+ */
+
+$getUserAvatar = static function (int $size) use ($_): string {
+	return \OC::$server->getURLGenerator()->linkToRoute('core.avatar.getAvatar', [
+		'userId' => $_['user_uid'],
+		'size' => $size,
+		'v' => $_['userAvatarVersion']
+	]);
+}
 
 ?><!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
@@ -18,7 +29,10 @@ p(!empty($_['application']) ? $_['application'].' - ' : '');
 p($theme->getTitle());
 ?>
 		</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="csp-nonce" nonce="<?php p($_['cspNonce']); /* Do not pass into "content" to prevent exfiltration */ ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0<?php if (isset($_['viewport_maximum_scale'])) {
+			p(', maximum-scale=' . $_['viewport_maximum_scale']);
+		} ?>">
 
 		<?php $iosAppId = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_customclient_ios_appid"); ?>
 		<?php if ($iosAppId !== '') { ?>
@@ -41,16 +55,32 @@ p($theme->getTitle());
 	<body id="<?php p($_['bodyid']);?>" <?php foreach ($_['enabledThemes'] as $themeId) {
 		p("data-theme-$themeId ");
 	}?> data-themes=<?php p(join(',', $_['enabledThemes'])) ?>>
-	<?php include 'layout.noscript.warning.php'; ?>
-
-		<?php foreach ($_['initialStates'] as $app => $initialState) { ?>
-			<input type="hidden" id="initial-state-<?php p($app); ?>" value="<?php p(base64_encode($initialState)); ?>">
-		<?php }?>
+		<?php include 'layout.noscript.warning.php'; ?>
+		<?php include 'layout.initial-state.php'; ?>
 
 		<div id="skip-actions">
 			<?php if ($_['id-app-content'] !== null) { ?><a href="<?php p($_['id-app-content']); ?>" class="button primary skip-navigation skip-content"><?php p($l->t('Skip to main content')); ?></a><?php } ?>
 			<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 		</div>
+
+		<header id="header">
+			<div class="header-left">
+				<a href="<?php print_unescaped($_['logoUrl'] ?: link_to('', 'index.php')); ?>"
+					aria-label="<?php p($l->t('Go to %s', [$_['logoUrl'] ?: $_['defaultAppName']])); ?>"
+					id="nextcloud">
+					<div class="logo logo-icon"></div>
+				</a>
+
+				<nav id="header-left__appmenu"></nav>
+			</div>
+
+			<div class="header-right">
+				<div id="unified-search"></div>
+				<div id="notifications"></div>
+				<div id="contactsmenu"></div>
+				<div id="user-menu"></div>
+			</div>
+		</header>
 
 		<main id="content" class="app-<?php p($_['appid']) ?>">
 			<h1 class="hidden-visually" id="page-heading-level-1">

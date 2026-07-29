@@ -32,9 +32,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		link = '',
 		target = '_self',
 	}: Props = $props();
+
+	const rel = $derived(
+		target === '_blank' ? 'noreferrer noopener' : undefined,
+	);
 </script>
 
-<a href={link} class="option-content" {target}>
+<a href={link} class="option-content" {target} {rel}>
 	<div class="icon-and-label">
 		<ionos-icons {...{ [icon]: true }}></ionos-icons>
 		<div class="label">{label}</div>

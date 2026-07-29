@@ -104,13 +104,16 @@ p($theme->getTitle());
 								link="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index')) ?>"
 								data-qa="IONOS-USER-MENU-SETTINGS-TARGET"
 							></ionos-user-menu-item>
-							<ionos-user-menu-item
+							<?php $securityLink = \OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_security_target_link'); ?>
+							<?php if ($securityLink !== '') { ?>
+								<ionos-user-menu-item
 									icon="accountkey"
 									label="<?php p($l->t('Login & Security')); ?>"
-									link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_security_target_link')) ?>"
+									link="<?php p($securityLink) ?>"
 									target="_blank"
 									data-qa="IONOS-USER-MENU-LOGIN-SECURITY-TARGET"
 								></ionos-user-menu-item>
+							<?php } ?>
 							<ionos-user-menu-item
 								icon="help"
 								label="<?php p($l->t('Help & Support'),); ?>"

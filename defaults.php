@@ -18,8 +18,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-OCP\Util::addScript('', 'custom-elements/global-navigation/ionos-global-navigation');
-
 /**
  * === ATTENTION ===
  * Please read and understand the comment in getDocBaseUrl()

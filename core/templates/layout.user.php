@@ -1,36 +1,22 @@
 <?php
 /**
- * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
  * SPDX-License-Identifier: AGPL-3.0-only
- * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
 
 /**
- * Check if logged user has email product
- * @return bool
+ * @var \OC_Defaults $theme
+ * @var array $_
  */
-$hasEmailProduct = static function (): bool {
-	try {
-		$availableProductsClaim = \OC::$server->get(\OC\SystemConfig::class)->getValue("available_products_claim");
-		if ($availableProductsClaim === '') {
-			return false;
-		}
 
-		$userOIDCBackend = \OC::$server->get(\OCA\UserOIDC\User\Backend::class);
-		$userData = $userOIDCBackend->getUserData();
-
-		$availableProductsData = $userData["raw"][$availableProductsClaim] ?? [];
-
-		// If the claim is not an array, try to decode it
-		$availableProducts = is_array($availableProductsData) ? $availableProductsData : (array)json_decode($availableProductsData);
-
-		return in_array("mail", $availableProducts);
-	} catch (\Error|\Exception) {
-		return false;
-	}
-};
+$getUserAvatar = static function (int $size) use ($_): string {
+	return \OCP\Server::get(\OCP\IURLGenerator::class)->linkToRoute('core.avatar.getAvatar', [
+		'userId' => $_['user_uid'],
+		'size' => $size,
+		'v' => $_['userAvatarVersion']
+	]);
+}
 
 ?><!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" data-locale="<?php p($_['locale']); ?>" translate="no" >
@@ -77,62 +63,23 @@ p($theme->getTitle());
 			<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 		</div>
 
-		<header id="ionos-global-nav">
-			<ionos-global-nav
-			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
-				<div data-qa="IONOS-SEARCH-TARGET">
-					<div id="unified-search"></div>
-				</div>
+		<header id="header">
+			<div class="header-start">
+				<a href="<?php print_unescaped($_['logoUrl'] ?: link_to('', 'index.php')); ?>"
+					aria-label="<?php p($l->t('Go to %s', [$_['logoUrl'] ?: $_['defaultAppName']])); ?>"
+					id="nextcloud">
+					<div class="logo logo-icon"></div>
+				</a>
 
-				<?php $link = \OC::$server->get(\OC\SystemConfig::class)->getValue("ionos_peer_products", [])['ionos_webmail_target_link']; ?>
-				<?php if ($link !== null && $hasEmailProduct()) { ?>
-					<a href="<?php p($link) ?>"
-						target="_blank"
-						title="<?php p($l->t('IONOS WEBMAIL')) ?>" data-qa="IONOS-WEBMAIL-TARGET">
-						<ionos-icons webmail />
-					</a>
-				<?php } ?>
-				<div class="usermenu" data-qa="IONOS-USER-MENU-TARGET">
-					<ionos-user-menu>
-						<b slot="username">
-							<?php p($_['user_displayname']); ?>
-						</b>
-						<div slot="options">
-							<ionos-user-menu-item
-								icon="settings"
-								label="<?php p($l->t('Settings')); ?>"
-								link="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkToRoute('settings.PersonalSettings.index')) ?>"
-								data-qa="IONOS-USER-MENU-SETTINGS-TARGET"
-							></ionos-user-menu-item>
-							<?php $securityLink = \OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_security_target_link'); ?>
-							<?php if ($securityLink !== '') { ?>
-								<ionos-user-menu-item
-									icon="accountkey"
-									label="<?php p($l->t('Login & Security')); ?>"
-									link="<?php p($securityLink) ?>"
-									target="_blank"
-									data-qa="IONOS-USER-MENU-LOGIN-SECURITY-TARGET"
-								></ionos-user-menu-item>
-							<?php } ?>
-							<ionos-user-menu-item
-								icon="help"
-								label="<?php p($l->t('Help & Support'),); ?>"
-								link="<?php p(\OC::$server->get(\OC\SystemConfig::class)->getValue('ionos_help_target_link')) ?>"
-								target="_blank"
-								data-qa="IONOS-USER-MENU-HELP-TARGET"
-							></ionos-user-menu-item>
-						</div>
-						<div slot="logout">
-							<ionos-user-menu-item
-								icon="logout"
-								label="<?php p($l->t('Logout')); ?>"
-								link="<?php p(\OC_User::getLogoutUrl(\OC::$server->get(\OCP\IURLGenerator::class)))?>"
-								data-qa="IONOS-USER-MENU-LOGOUT-TARGET"
-							></ionos-user-menu-item>
-						</div>
-					</ionos-user-menu>
-				</div>
-			</ionos-global-nav>
+				<nav id="header-start__appmenu"></nav>
+			</div>
+
+			<div class="header-end">
+				<div id="unified-search"></div>
+				<div id="notifications"></div>
+				<div id="contactsmenu"></div>
+				<div id="user-menu"></div>
+			</div>
 		</header>
 
 		<div id="content" class="app-<?php p($_['appid']) ?>">

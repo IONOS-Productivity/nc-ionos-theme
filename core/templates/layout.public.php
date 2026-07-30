@@ -1,9 +1,7 @@
 <?php
 /**
- * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2018-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
- * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
 ?>
 <!DOCTYPE html>
@@ -48,28 +46,41 @@ p($theme->getTitle());
 		<?php if ($_['id-app-content'] !== null) { ?><a href="<?php p($_['id-app-content']); ?>" class="button primary skip-navigation skip-content"><?php p($l->t('Skip to main content')); ?></a><?php } ?>
 		<?php if ($_['id-app-navigation'] !== null) { ?><a href="<?php p($_['id-app-navigation']); ?>" class="button primary skip-navigation"><?php p($l->t('Skip to navigation of app')); ?></a><?php } ?>
 	</div>
-	<header id="ionos-global-nav">
-		<ionos-global-nav
-		home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
+
+	<header id="header">
+		<div class="header-start">
+			<div id="nextcloud" class="header-appname">
+				<?php if ($_['logoUrl']): ?>
+					<a href="<?php print_unescaped($_['logoUrl']); ?>"
+					   aria-label="<?php p($l->t('Go to %s', [$_['logoUrl']])); ?>">
+						<div class="logo logo-icon"></div>
+					</a>
+				<?php else: ?>
+					<div class="logo logo-icon"></div>
+				<?php endif; ?>
+
+				<div class="header-info">
+					<span class="header-title">
+						<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
+							<?php p($template->getHeaderTitle()); ?>
+						<?php } else { ?>
+							<?php	p($theme->getName()); ?>
+						<?php } ?>
+					</span>
+					<?php if (isset($template) && $template->getHeaderDetails() !== '') { ?>
+						<span class="header-shared-by">
+							<?php p($template->getHeaderDetails()); ?>
+						</span>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="header-end">
 			<div id="public-page-menu"></div>
-		</ionos-global-nav>
+			<div id="public-page-user-menu"></div>
+		</div>
 	</header>
-
-	<div class="header-info">
-		<span class="header-title">
-			<?php if (isset($template) && $template->getHeaderTitle() !== '') { ?>
-				<?php p($template->getHeaderTitle()); ?>
-			<?php } else { ?>
-				<?php	p($theme->getName()); ?>
-			<?php } ?>
-		</span>
-		<?php if (isset($template) && $template->getHeaderDetails() !== '') { ?>
-			<span class="header-shared-by">
-				<?php p($template->getHeaderDetails()); ?>
-			</span>
-		<?php } ?>
-	</div>
-
 
 	<div id="content" class="app-<?php p($_['appid']) ?>">
 		<h1 class="hidden-visually">
@@ -83,20 +94,20 @@ p($theme->getTitle());
 		<?php print_unescaped($_['content']); ?>
 	</div>
 
-	<?php if (isset($template) && $template->getFooterVisible() && ($theme->getLongFooter() !== '' || $_['showSimpleSignUpLink'])) { ?>
-	<footer>
-		<p><?php print_unescaped($theme->getLongFooter()); ?></p>
-		<?php
-if ($_['showSimpleSignUpLink']) {
-	?>
-			<p class="footer__simple-sign-up">
-				<a href="<?php p($_['signUpLink']); ?>" target="_blank" rel="noreferrer noopener">
-					<?php p($l->t('Get your own free account')); ?>
-				</a>
-			</p>
-			<?php
-}
-		?>
+	<?php if ((!isset($template) || $template->getFooterVisible() !== false) && ($theme->getLongFooter() !== '' || $_['showSimpleSignUpLink'])) { ?>
+	<footer class="guest-box">
+		<?php if ($theme->getLongFooter() !== '') { ?>
+		<p class="info">
+			<?php  print_unescaped($theme->getLongFooter()); ?>
+		</p>
+		<?php } ?>
+		<?php if ($_['showSimpleSignUpLink']) { ?>
+		<p class="footer__simple-sign-up">
+			<a href="<?php p($_['signUpLink']); ?>" target="_blank" rel="noreferrer noopener">
+				<?php p($l->t('Get your own free account')); ?>
+			</a>
+		</p>
+		<?php } ?>
 	</footer>
 	<?php } ?>
 

@@ -1,10 +1,8 @@
 <?php
 /**
- * SPDX-FileCopyrightText: 2024 STRATO AG
  * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-FileCopyrightText: 2011-2016 ownCloud, Inc.
  * SPDX-License-Identifier: AGPL-3.0-only
- * SPDX-FileContributor: Kai Henseler <kai.henseler@strato.de>
  */
 ?>
 <!DOCTYPE html>
@@ -43,23 +41,16 @@ p($theme->getTitle());
 	}?> data-themes="<?php p(join(',', $_['enabledThemes'])) ?>">
 		<?php include 'layout.noscript.warning.php'; ?>
 		<?php include 'layout.initial-state.php'; ?>
-
-		<header id="ionos-global-nav">
-			<ionos-global-nav
-			home_src="<?php p(\OC::$server->get(\OCP\IURLGenerator::class)->linkTo('', 'index.php'))?>">
-			</ionos-global-nav>
-		</header>
-
 		<div class="wrapper">
 			<div class="v-align">
 				<?php if ($_['bodyid'] === 'body-login'): ?>
 					<header>
-						<div id="header">
+						<div id="header" class="header-guest">
 							<div class="logo"></div>
 						</div>
 					</header>
 				<?php endif; ?>
-				<div>
+				<div class="guest-content">
 					<h1 class="hidden-visually">
 						<?php p($theme->getName()); ?>
 					</h1>

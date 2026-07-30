@@ -50,7 +50,7 @@ ionos-user-menu:not(:defined) {
 	display: none; /* Hide the username unitl menu is defined */
 }
 
-header#header {
+div#content-vue  {
 	margin-top: 64px !important;
 }
 
